@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1570204877 source:/home/student/Pulpit/s_first_code/main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+
+1570198325 source:/home/student/Pulpit/s_first_code/second.c
+

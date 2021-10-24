@@ -1,0 +1,2 @@
+punkty: 17.000000, imię: Serg, nazwisko: Kapsh 
+punkty: 13.000000, imię: Viktor, nazwisko: Stokolos 
