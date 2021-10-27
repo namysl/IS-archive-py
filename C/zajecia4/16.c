@@ -7,7 +7,6 @@ int main(){
     scanf(" %d", &n);
 
     //int array[n];
-    //int zlicza;
 
     for (int i=2; i<n; i++){
         if (((i % 2 != 0)||(i==2)) && (i % 3 != 0 ||(i==3))
@@ -15,4 +14,6 @@ int main(){
             printf("%d, ", i);
         }
     }
+
+    return 0;
 }

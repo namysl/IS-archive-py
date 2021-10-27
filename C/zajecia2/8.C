@@ -15,12 +15,12 @@ char gwiazdka = '*';
 
 */
 
-int main() {
+int main(){
 
     scanf("%i\n", n);
 
-    for (k=1; k<=n; k++) {
-        for (ik=1; ik<=k+1; k++) {
+    for (k=1; k<=n; k++){
+        for (ik=1; ik<=k+1; k++){
             // n+1-ik spacji + 2*ik-1 gwiazdek
             putchar('%c%c', spacja, gwiazdka);
             printf('\n');

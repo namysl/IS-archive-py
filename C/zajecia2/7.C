@@ -5,17 +5,17 @@ int liczba_mid = 64;
 int liczba_bot = 1;
 char odp;
 
-int main() {
+int main(){
 
-    do {
+    do{
         printf("%i ?\n", liczba_mid);
         odp = getchar();
         getchar();
 
-        if (odp == '<') {
+        if (odp == '<'){
             liczba_top = liczba_mid;
         }
-        else if (odp == '>') {
+        else if (odp == '>'){
 
             liczba_bot = liczba_mid;
         }
@@ -23,9 +23,9 @@ int main() {
 
     } while (odp != '=');
 
-printf("Szukana liczba to: %i\n", liczba_mid);
+    printf("Szukana liczba to: %i\n", liczba_mid);
 
-return 0;
+    return 0;
 }
 
 

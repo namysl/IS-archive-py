@@ -3,7 +3,7 @@
 int main(){
     int x;
 
-    for(x=1; x<=10; x++){
+    for (x=1; x<=10; x++){
         printf("| %6d |\n", y(x));
     }
     return 0;

@@ -3,35 +3,34 @@
 
 int main(){
 
-unsigned licznik=0;
-bool czy_spacja = true;
-char znak;
+    unsigned licznik = 0;
+    bool czy_spacja = true;
+    char znak;
 
-do {
-    znak = getchar();
+    do{
+        znak = getchar();
 
-    if (znak == ' '){
-        if (!czy_spacja){
-            putchar(' ');
+        if (znak == ' '){
+            if (!czy_spacja){
+                putchar(' ');
+            }
+            czy_spacja = true;
         }
-        czy_spacja = true;
-    }
-    else if (czy_spacja) {
-        if (znak <= 'z' && znak >= 'a'){
-            znak += 'A' - 'a';
+        else if (czy_spacja){
+            if (znak <= 'z' && znak >= 'a'){
+                znak += 'A' - 'a';
+            }
+
+            czy_spacja = false;
+            putchar(znak);
+            licznik++;
+        }
+        else{
+            putchar(znak);
         }
 
-        czy_spacja = false;
-        putchar(znak);
-        licznik++;
-    }
-    else {
-        putchar(znak);
-    }
+    } while (znak != '\n');
 
-}
-while (znak != '\n');
-
-//printf("licznik: %i\n", licznik);
+    //printf("licznik: %i\n", licznik);
     return 0;
 }

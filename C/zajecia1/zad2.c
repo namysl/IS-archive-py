@@ -3,10 +3,10 @@
 unsigned ilosc_mnozen = 0;
 unsigned char x = 1;
 
-// program, który wylicza pojemnoœæ unsigned char
+// program, ktory wylicza pojemnosc unsigned char
 
-void main() {
-	while (x != 0) {
+void main(){
+	while (x != 0){
 		x = x * 2;
 		ilosc_mnozen++;
 	}
