@@ -1,0 +1,94 @@
+root ma uid=0
+pwd			-> gdzie aktualnie jestes
+tree			-> drzewo katalogow
+
+$			-> user
+#			-> root
+
+echo ~			-> katalog domowy usera (echo $HOME)
+
+ctrl + r		-> historia komend
+
+..			-> katalog wyzszy
+.			-> katalog aktualny w ktorym jestesmy
+
+su			-> switch user
+
+tty			-> prints the file name of terminal connected to standard input
+
+sensors			-> cpu/pci temperature
+lscpu			-> list cpu
+free -h			-> shows RAM + swap usage
+
+mc			-> midnight commander
+uname -a		-> unix name
+
+net-tools/ifconfig	-> rozne narzedzia sieciowe
+ip addr
+
+env			-> display all available variables in the system
+path			-> sciezka dostepu
+
+$ spacja + tab		-> wszystkie polecenia (nie dziala w ubuntu)
+
+lftp			-> file transfer program
+
+locate			-> find files by name
+which + polecenie	-> sciezka polecenia
+whereis			-> gdzie znajduja sie binarki, zrodla, manuale etc. dla polecenia
+
+id			-> zwraca informacje o userze, typu do jakich grup nalezy, jakie ma id etc.
+who			-> kto jest zalogowany
+id -u			-> zwraca sam numer id aktualnego uzytkownika
+
+passwd			-> zmiana hasla
+
+date			-> zwraca date
+
+dd			-> convert and copy a file
+du			-> estimate file space usage (-h -> human)
+
+df			-> woluminy
+
+TZ=CET date		-> zmiana strefy czasowej
+
+lost+found		-> osierocone pliki :CC
+fsck			-> check and repair a linux filesystem
+
+stty			-> change and print terminal line settins
+
+cat | cat		-> wpisujesz tekst i w nastepnej linii go printuje
+
+cat >plik.txt		-> pisz bzdury tu
+cat plik.txt		-> no i w srodku sa bzdury
+
+more/less		-> wyswietlanie zawartosci plikow (less ma wiecej opcji)
+tail/head		-> wyswietla poczatek lub koniec zawartosci pliku
+
+echo
+echo blabla
+blabla=1		-> zmienna
+echo $blabla
+
+file `which [`
+ls -LF `which [`
+ldd `which [`		-> print shared object dependencies
+[ 1 ] ; echo $?		-> zwraca 0 (prawda)
+[ 2 -eq 0 ] ; echo $?	-> zwraca 1 (falsz), w linuxie cokolwiek poza 0 jest falszem
+
+[ ]			-> mozna uzywac do porownan wartosci i sprawdzania typu pliku etc.
+
+alias			-> najlepiej zaliasowac komus rm -rf /
+
+export name=value	-> creating new environment variable
+unset var_name		-> removing an environment variable
+
+ctrl + alt + F1-6	-> tty konsole
+xterm&			-> emulator terminala x window
+
+ls -la |wc   		-> ?????
+
+| 			-> pipe/potok
+
+
+

@@ -1,0 +1,85 @@
+git help <verb>
+git <verb> --help
+man git-<verb>
+
+logout
+
+git config --global user.name "<name>"
+git config --global user.email "<email>"
+git config --global core.editor "<editor">
+
+local
+
+
+git config --list
+
+
+git init
+git add <file/catalog>
+git commit -m "<message>"
+git push
+
+git status
+
+git clone <url>
+
+git branch <name>
+# git tworzy nową gałąź, ale nie przełącza na nią
+# HEAD wskazuje na main
+
+git checkout <name>
+# HEAD wskazuje na wybraną gałąź 
+
+git checkout -b <name>
+# tworzy brancha i przełącza na niego
+
+git commit -a
+# -a -> all
+
+git merge <name>
+
+git branch -d <name>
+# usuwanie niepotrzebnej gałęzi
+
+mergetools
+
+git branch -> gwiazdka wskazuje aktywna galaz
+
+git branch -v -> pokazuje ostatnie zatwierdzone zmainy
+
+git remote -> jakie zdalne galezie zostaly podlaczone
+git remote -v
+
+git remote add [skrot] [url]
+
+git fetch [nazwa zdalnego repo] -> sciaga nowe zmiany, ktorych
+nie masz ze zdalnego repo
+nie merge'uje twoich danych ze zdalnym repo
+
+git pull -> sciaga i merge'uje
+
+git push [nazwa zdalnego repo] [nazwa galezi] -> wypchanie zmian
+musisz miec prawo zapisu, musisz miec aktualne dane z repo
+(jesli ktos w miedzyczasie wypchnal zmiany, musisz je najpierw 
+pobrac i scalic)
+
+git remote show [nazwa zdalnego repo] -> inspekcja zdalnych zmian
+
+git remote rename [stara] [nowa] -> zmiana nazwy odnosnika
+
+git remote rm [nazwa] -> usuwanie
+
+git reset HEAD <plik>
+
+git log
+git log --pretty=oneline 
+git log --online --decorate --graph
+
+git diff
+
+git commit -a -m "komentarz"
+
+.gitignore
+
+git branch -v
+

@@ -19,6 +19,7 @@ int main(){
         if (user_input[0] == 'k'){
             break;
         }
+
     } while (1);
 
     return 0;
@@ -26,63 +27,129 @@ int main(){
 
 
 void rysuj(int liczba){
-    //int ascii[6] = {218, 191, 192, 217, 196, 179};
 
-    int kostka[25] = {218, 196, 196, 196, 191,
-                      179, 32, 32, 32, 179,
-                      179, 32, 32, 32, 179,
-                      179, 32, 32, 32, 179,
+    int kostka[10] = {218, 196, 196, 196, 191,
                       192, 196, 196, 196, 217};
 
-    int parzyste[9] = {42, 32, 42,
-                       42, 32, 42,
-                       42, 32, 42};
+    int parzyste[15] = {179, 42, 32, 42, 179,
+                       179, 42, 32, 42, 179,
+                       179, 42, 32, 42, 179};
 
-    int nieparzyste[9] = {42, 32, 42,
-                          32, 42, 32,
-                          42, 32, 42};
-
-    int licznik = 0;
-    for(int x=0; x<25; x++){
-        licznik++;
-        printf("%c", kostka[x]);
-
-        if (licznik == 5){
-            printf("\n");
-            licznik = 0;
-        }
-    }
+    int nieparzyste[15] = {179, 42, 32, 42, 179,
+                          179, 32, 42, 32, 179,
+                          179, 42, 32, 42, 179};
 
 
     for(int x=0; x<5; x++){
         printf("%c", kostka[x]);
     }
     printf("\n");
+
+    int licznik = 0;
+
     if (liczba % 2 == 0){
-        for(int x=0; x<9; x++){
-        printf("%c", parzyste[x]);
+        switch(liczba) {
+            case 2:
+                for (int x=0; x<15; x++){
+                    if(x==3 || x==6 || x==8 || x==11){
+                        printf(" ");
+                    }
+                    else{
+                        printf("%c", parzyste[x]);
+                    }
+                    licznik++;
+
+                    if (licznik==5){
+                        printf("\n");
+                        licznik = 0;
+                    }
+                }
+                break;
+
+            case 4:
+                for (int x=0; x<15; x++){
+                    if(x==6 || x==8){
+                        printf(" ");
+                    }
+                    else{
+                        printf("%c", parzyste[x]);
+                    }
+                    licznik++;
+
+                    if (licznik==5){
+                        printf("\n");
+                        licznik = 0;
+                    }
+                }
+                break;
+
+            case 6:
+                for (int x=0; x<15; x++){
+                    printf("%c", parzyste[x]);
+                    licznik++;
+
+                    if (licznik==5){
+                        printf("\n");
+                        licznik = 0;
+                    }
+                }
+                break;
         }
     }
+
     if (liczba % 2 == 1){
-        for(int x=0; x<9; x++){
-        printf("%c", nieparzyste[x]);
+        switch(liczba){
+            case 1:
+                for (int x=0; x<15; x++){
+                    if(x==1 || x==3 || x==11 || x==13){
+                        printf(" ");
+                    }
+                    else{
+                        printf("%c", nieparzyste[x]);
+                    }
+                    licznik++;
+
+                    if (licznik==5){
+                        printf("\n");
+                        licznik = 0;
+                    }
+                }
+                break;
+
+            case 3:
+                for (int x=0; x<15; x++){
+                    if(x==3 || x==11){
+                        printf(" ");
+                    }
+                    else{
+                        printf("%c", nieparzyste[x]);
+                    }
+                    licznik++;
+
+                    if (licznik==5){
+                        printf("\n");
+                        licznik = 0;
+                    }
+                }
+                break;
+
+            case 5:
+                for (int x=0; x<15; x++){
+                    printf("%c", nieparzyste[x]);
+                    licznik++;
+
+                    if (licznik==5){
+                        printf("\n");
+                        licznik = 0;
+                    }
+                }
+                break;
         }
-    printf("\n");
     }
-    for(int x=20; x<25; x++){
+
+    for(int x=5; x<10; x++){
         printf("%c", kostka[x]);
     }
 
-    /*
-    printf("%c%c%c%c%c\n", ascii[0], ascii[4], ascii[4], ascii[4], ascii[1]);
-    printf("%c   %c\n", ascii[5], ascii[5]);
-    printf("%c * %c\n", ascii[5], ascii[5]);
-    printf("%c   %c\n", ascii[5], ascii[5]);
-    printf("%c%c%c%c%c\n\n", ascii[2], ascii[4], ascii[4], ascii[4], ascii[3]);
-    */
-
+    printf("\n");
 }
-
-//          *           *           * *         * *      * *
-//  *                    *                       *       * *
-//            *           *         * *         * *      * *
