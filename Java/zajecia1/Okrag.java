@@ -1,26 +1,31 @@
-class Okrag {
+/* Zadanie 1.7 */
+public class Okrag {
     double promien;
     Punkt srodek;
 
-    Okrag (double promien) {
-        this.promien = promien;
-        this.srodek = new Punkt(0, 0);
+    Okrag(double promien)
+    {
+        this.promien=promien;
+        this.srodek=new Punkt(0,0);
     }
 
-    Okrag(double promien, Punkt srodek) {
-        this.promien = promien;
-        this.srodek = srodek;
+    Okrag(double promien, Punkt srodek)
+    {
+        this.promien=promien;
+        this.srodek=srodek;
     }
 
-    double obwod() {
-        return 2 * 3.14 * promien;
+    double pole()
+    {
+        return promien*promien*Math.PI;
     }
 
-    double pole() {
-        return 3.14 * (promien * promien);
+    double obwod()
+    {
+        return 2*promien*Math.PI;
     }
 
-    public String toString() {
-        return "r: " + promien + " srodek: " + srodek + " obwod: " + obwod() + " pole: " + pole();
+    boolean zawiera(Punkt obj){ //Metoda zwraca True/False w zalezności czy znajduje się w okręgu
+        return (Math.sqrt((obj.x-srodek.x)*(obj.x-srodek.x)+(obj.y-srodek.y)*(obj.y-srodek.y))<=promien);
     }
 }
