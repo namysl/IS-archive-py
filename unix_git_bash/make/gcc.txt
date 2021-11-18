@@ -1,0 +1,5 @@
+ręczna kompilacja:
+gcc -DMYDEFINE -c myapp.o myapp.cpp
+
+linkowanie:
+ld -o myapp file1.o file2.o file3.o -lc -lmylib
