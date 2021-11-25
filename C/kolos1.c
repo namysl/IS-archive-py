@@ -137,3 +137,20 @@ int main(){
 
     return 0;
 }
+
+
+/*
+Punkty 78/100
+
+Zestaw 1
+- pobranie adresu 3/5, poprawność (@,1,A,a) 10/10, pętla poprawiająca 5/5, wyświetlenie z dużych 10/10
+- alokacja 10/10, poprawność 0/5, zwolnienie 0/5
+- losowość rozmiaru 15/15, wczytanie tekstu 15/15, limit 0/5, ignorowanie pozostałych 0/5
+
+linia 13, zbyt długi mail nie zostanie wczytany
+linia 110, zbyt długa zawartość maila nie zostanie wczytany, rozumiem, że wykomentowany kod nie działał dobrze i stąd ta proteza
+linia 117, powinna być przypisana wartość 0
+linia 121, powinno to być przed pętlą sprawdzone
+linie 131-134 powinny być poza linią bez ponownej alokacji, tylko komunikat o błędzie wystarczy
+linia 135, wewnątrz pętli sprawdzamy już drugi warunek i wypisujemy stosowny komunikat, tu należy więc go usunąć
+*/
