@@ -3,10 +3,10 @@
 #include <stdlib.h>
 
 main() {
-    char alph[30] = {'a', 'b', 'c', 'd', 'e', 'f', 
+    char alph[30] = {'a', 'b', 'c', 'd', 'e', 'f',
 	 	     'g', 'k', 'l', 'm', 'n', 'o', 'p',
-     		     'r', 's', 't', 'y', 'z', 'x', 'i', 
-		     'w', 'v', 'q', 'h', 'u', 'j', '.', 
+     		     'r', 's', 't', 'y', 'z', 'x', 'i',
+		     'w', 'v', 'q', 'h', 'u', 'j', '.',
 		     ',', '\t'};
 
     char numb[10] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
@@ -27,7 +27,7 @@ main() {
     removed_others = -1;
     amount_of_chars = -1;
 
-    printf("Proszę podać tekst: \n");
+    printf("Prosze podac tekst: \n");
 
     do {
 	c = getchar();
@@ -70,11 +70,11 @@ main() {
 
     if (amount_of_chars != 0) {
 	    per_sp = removed_spaces / amount_of_chars;
-	    printf("\n Usuniente spacji: %lf.% \n", per_sp*100);
+	    printf("\n Usuniete spacji: %lf.% \n", per_sp*100);
 	    per_nb = removed_numbers / amount_of_chars;
-	    printf("Usuniente lizby: %lf.% \n", per_nb*100);
+	    printf("Usuniete liczby: %lf.% \n", per_nb*100);
 	    per_ch = removed_others / amount_of_chars;
-	    printf("Ususniente inne: %lf.% \n", per_ch*100);
+	    printf("Usuniete inne: %lf.% \n", per_ch*100);
     } else {
 	    printf("\n Nie ma usuniętych symboli");
     }
