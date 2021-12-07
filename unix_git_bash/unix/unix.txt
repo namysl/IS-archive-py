@@ -164,3 +164,18 @@ SGID			-> set-group identification, chmod 2555
 SVTX (sticky bit)	-> used on shared directories, user cannot deleted
 			   other user's file, even if he can rwx it
 			   chmod +t "path to dir" or chmod 1777 "path"
+
+
+aptitude		-> program do instalacji/usuwania pakietow (apt)
+
+file `which firefox`
+
+$PATH
+ldd
+dd
+du 
+df
+dmesg
+/ ? -> to szukania do przodu i tyłu w man
+ls -l `which [`
+ls -li   <- node number
