@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+# Wykorzystanie argumentow wywolania
+#
+if [ $# -eq 0 ]
+then echo "Nie podales argumentow"
+exit 99
+fi
+
+echo "      Nazwa programu: $0"
+echo "  Argument wywolania: $1"
+
+
