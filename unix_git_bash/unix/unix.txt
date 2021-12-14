@@ -169,7 +169,6 @@ SVTX (sticky bit)	-> used on shared directories, user cannot deleted
 aptitude		-> program do instalacji/usuwania pakietow (apt)
 
 file `which firefox`
-
 $PATH
 ldd
 dd
@@ -179,3 +178,12 @@ dmesg
 / ? -> to szukania do przodu i tyłu w man
 ls -l `which [`
 ls -li   <- node number
+echo $?		-> zwraca kod na wyjsciu ostatniego puszczonego skryptu
+
+PATH=$PATH:.
+export PATH=$PATH:.
+bc			-> kalkulator
+tr
+;;			-> terminator
+sed
+

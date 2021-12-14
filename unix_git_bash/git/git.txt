@@ -83,3 +83,20 @@ git commit -a -m "komentarz"
 
 git branch -v
 
+git remote
+git fetch -> jak git pull, tylko bez merge'a
+git pull
+git push
+git clone
+
+git init --bare zdalne.git
+git clone zdalne.git lokalne
+
+git ... -h
+
+git branch -a
+git branch -v
+git push origin master
+
+git remote add alias adres_repo
+git show alias
