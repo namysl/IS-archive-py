@@ -115,8 +115,14 @@ int mnoz_wielomiany(wielomian P, wielomian Q, wielomian R){
 
 int main(){
 
-    wielomian przyklad;
-    nowy_wielomian(przyklad);
+    wielomian przyklad1;
+    nowy_wielomian(przyklad1);
+
+    wielomian przyklad2;
+    nowy_wielomian(przyklad2);
+
+    wielomian wynik;
+    dodaj_wielomian(przyklad1, przyklad2, wynik);
 
     return 0;
 }
