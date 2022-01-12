@@ -7,16 +7,16 @@
 
 int main()
 {
-    FILE * plik;
+    FILE *plik;
     char nazwa_pliku[64];
     char c, menu;
     do{
-        printf("Wybierz ocje:\n1)Wyswietl zawartosc\n2)Zapisz tekst do pliku\n");
-        scanf(" %c",&menu);
+        printf("Wybierz ocje:\n1)Wyswietl zawartosc\n2)Zapisz tekst do pliku\n3)Aby zakonczyc\n");
+        scanf(" %c", &menu);
         if(menu=='1'){
-            printf("Podaj nazwe pliku\n");
+            printf("Podaj nazwe pliku: ");
             scanf(" %[^\n]s", nazwa_pliku);
-            plik = fopen(nazwa_pliku,"r");
+            plik = fopen(nazwa_pliku, "r");
             if(plik){
                 while(1){
                     c = fgetc(plik);
@@ -26,37 +26,38 @@ int main()
                     else{
                         break;
                     }
-                    
+
                 }fclose(plik);
-            
+                printf("\n\n");
             }
             else{
                 perror("Problem z otworzeniem pliku!");
             }
         }
         else if(menu=='2'){
-            printf("Podaj nazwe pliku\n");
+            printf("Podaj nazwe pliku: ");
             scanf(" %[^\n]s", nazwa_pliku);
-            plik = fopen(nazwa_pliku,"w");
-            if(plik){
-                printf("Podaj tekst do zapisania");
-                while(1){
-                    c = getchar();
-                    if(c!='\n'){
-                        fputc(c,plik);
-                    }                  
-                    else{
-                        break;
-                    }
-                    
-                }fclose(plik);
-            }
-            else{
+
+            plik = fopen(nazwa_pliku, "w");
+
+            if(plik == NULL){
                 perror("Problem z otworzeniem pliku!");
             }
+
+            printf("\nPodaj tekst do zapisania: ");
+
+            while( (c = getchar()) != '*' ) {
+                putc(c, plik);
+            }
+
+            fclose(plik);
+            }
+
+        else if(menu=='3'){
+            return 0;
         }
         else{
-            printf("Nieprawidłowy wybór");
+            printf("Nieprawidlowy wybor");
         }
-    }while(menu!='3');
+    }while(menu != '3');
 }

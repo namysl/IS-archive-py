@@ -1,0 +1,6 @@
+libaudio2  -> network audio system
+libc6 (>= 2.4) -> gnu c
+libglib2.0-0 (>= 2.14.0) -> library of C routines
+libgtk-3-0 (>= 3.9.10) -> gtk
+libnotify4 (>= 0.7.0) -> sends desktop notifications to a notification daemon 
+libopenal1 (>= 1.14) -> open audio library

@@ -1,10 +1,7 @@
 // copied from https://developer.gnome.org/gtk3/stable/gtk-getting-started.html
 #include <gtk/gtk.h>
 
-static void
-activate (GtkApplication* app,
-          gpointer        user_data)
-{
+static void activate (GtkApplication* app, gpointer user_data){
   GtkWidget *window;
 
   window = gtk_application_window_new (app);
@@ -13,10 +10,7 @@ activate (GtkApplication* app,
   gtk_widget_show_all (window);
 }
 
-int
-main (int    argc,
-      char **argv)
-{
+int main (int argc, char **argv){
   GtkApplication *app;
   int status;
 

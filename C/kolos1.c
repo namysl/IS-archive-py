@@ -3,14 +3,16 @@
 #include <stdbool.h>
 #include <time.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 int main(){
     char mail[256];
     bool poprawny = true;
 
     do {
-        printf("Podaj adres mailowy: ");
-        scanf(" %s", mail);
+        printf("Podaj adres mailowy (do 256 znakow): ");
+        scanf(" %256s", mail);
+        fflush(stdin);
 
         //printf("Podany adres: %s\n", mail);
 
@@ -86,39 +88,34 @@ int main(){
     //2kB = 2048B
     //4kb = 4096B
 
-    char *tablica;
+    //char *tablica;
     int rozmiar;
 
     if (liczba == 1){
         rozmiar = 1024;
-        char *tablica = (char*)malloc(rozmiar * sizeof(char));
     }
     if (liczba == 2){
         rozmiar = 2048;
-        char *tablica = (char*)malloc(rozmiar * sizeof(char));
     }
     if (liczba == 4){
         rozmiar = 4096;
-        char *tablica = (char*)malloc(rozmiar * sizeof(char));
+
     }
 
+    char *tablica = (char*)malloc(rozmiar * sizeof(char));
     printf("Wpisz tekst wiadomosci: ");
 
+    //scanf(" %[^\n]s", tablica);
+    //printf("%s\n", tablica);
 
+    //printf("Rozmiar tablicy: %d\n", rozmiar);
 
-
-    scanf(" %[^\n]s", tablica);
-    printf("%s\n", tablica);
-
-    printf("Rozmiar tablicy: %d\n", rozmiar);
-
-    /*
     char znak;
-    int liczba_znakow;
+    int liczba_znakow = 0;
 
-    do{
-        znak = getchar();
-        if (tablica){
+    if (tablica){
+        do{
+            znak = getchar();
             if (liczba_znakow < rozmiar){
                 tablica[liczba_znakow] = znak;
                 liczba_znakow++;
@@ -127,17 +124,15 @@ int main(){
                 printf("Za malo pamieci");
                 break;
             }
-        }
-        else{
-            printf("Co sie stalo z tablica?");
-            char *tablica = (char*)malloc(sizeof(char)*rozmiar);
-        }
-    } while(znak != '\n' && liczba_znakow < rozmiar);
-    */
+        } while(znak != '\n');
+    }
+    else{
+        printf("Co sie stalo z tablica?");
+        printf("Blad");
+    }
 
     return 0;
 }
-
 
 /*
 Punkty 78/100
@@ -147,10 +142,10 @@ Zestaw 1
 - alokacja 10/10, poprawność 0/5, zwolnienie 0/5
 - losowość rozmiaru 15/15, wczytanie tekstu 15/15, limit 0/5, ignorowanie pozostałych 0/5
 
-linia 13, zbyt długi mail nie zostanie wczytany
-linia 110, zbyt długa zawartość maila nie zostanie wczytany, rozumiem, że wykomentowany kod nie działał dobrze i stąd ta proteza
-linia 117, powinna być przypisana wartość 0
-linia 121, powinno to być przed pętlą sprawdzone
-linie 131-134 powinny być poza linią bez ponownej alokacji, tylko komunikat o błędzie wystarczy
-linia 135, wewnątrz pętli sprawdzamy już drugi warunek i wypisujemy stosowny komunikat, tu należy więc go usunąć
++ linia 13, zbyt długi mail nie zostanie wczytany
++ linia 110, zbyt długa zawartość maila nie zostanie wczytany, rozumiem, że wykomentowany kod nie działał dobrze i stąd ta proteza
++ linia 117, powinna być przypisana wartość 0
++ linia 121, powinno to być przed pętlą sprawdzone
++ linie 131-134 powinny być poza linią bez ponownej alokacji, tylko komunikat o błędzie wystarczy
++ linia 135, wewnątrz pętli sprawdzamy już drugi warunek i wypisujemy stosowny komunikat, tu należy więc go usunąć
 */

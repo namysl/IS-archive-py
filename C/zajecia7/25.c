@@ -11,12 +11,15 @@ double mnoz(double x, double y){
 
 int main()
 {
-    double (*wsk)(double,double);
-    printf("Podaj dane\n");
+    double (*wsk)(double, double);
+
     double x, y;
     char c;
+
+    printf("Podaj dwie liczby: \n");
     scanf(" %lf %lf", &x, &y);
-    printf("Wybierz operacje\n");
+
+    printf("Wybierz operacje: \n");
     scanf(" %c", &c);
 
     switch(c){
@@ -30,13 +33,13 @@ int main()
             wsk = 0;
             break;
     }
-    
+
     if(wsk){
         printf("Wynik = %f\n", wsk(x, y));
     }
     else{
-        printf("Nieprawidłowe działanie");
+        printf("Nieprawidlowe dzialanie");
         return 0;
     }
-    
+
 }

@@ -22,6 +22,7 @@ int main(){
                 printf("Podaj komunikat: ");
                 char znak;
                 // tutaj wyczyscic bufor
+                fflush(stdin);
                 do{
                     znak = getchar();
                     fputc(znak, plik);

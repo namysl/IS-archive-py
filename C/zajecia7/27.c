@@ -4,7 +4,7 @@
 #include <math.h>
 #include <stdarg.h>
 
-double norma(unsigned n,...){
+double norma(unsigned n, ...){
     va_list wspolrzedne;
     va_start(wspolrzedne, n);
     double suma = 0, x;

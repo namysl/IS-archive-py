@@ -5,8 +5,8 @@
 int main()
 {
     unsigned m;
-    printf("Podaj ilość słów: ");
-    scanf(" %u",&m);
+    printf("Podaj ilosc slow: ");
+    scanf(" %u", &m);
     char* wsk=(char*)malloc(24*m);
 
     if(wsk){
@@ -22,6 +22,6 @@ int main()
         }
     }
     else{
-        printf("Błąd alokacji pamięci");
+        printf("Blad alokacji pamieci");
     }
 }

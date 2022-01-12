@@ -118,5 +118,7 @@ int main(){
     wielomian przyklad;
     nowy_wielomian(przyklad);
 
+    printf("wartosc w punkcie: %f", wartosc_w_punkcie(przyklad, 2));
+
     return 0;
 }
