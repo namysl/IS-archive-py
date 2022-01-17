@@ -1,7 +1,3 @@
-MANIFEST = *.c *.h Makefile*
-DESTDIR = $(HOME)/bin
-VER = 0.1
-
 CC     = gcc
 CFLAGS = -Wall -ansi -pedantic
 LFLAGS = -lm
@@ -31,11 +27,3 @@ clean:
 	rm -f $(EXEC) $(OBJS)
 
 .PHONY: clean
-
-install: all
-	sh -c "if [ ! -d $(DESTDIR) ] ; then mkdir $(DESTDIR) ; fi"
-	cp $(EXEC) $(DESTDIR)/$(EXEC)
-	echo hello: zainstalowane!
-
-dist: clean
-	tar cvzf ../$(EXEC)-$(VER).tar.gz $(MANIFEST)
