@@ -1,0 +1,3 @@
+/home/student/Pulpit/NOWE/build/CMakeFiles/rebuild_cache.dir
+/home/student/Pulpit/NOWE/build/CMakeFiles/helloworld.dir
+/home/student/Pulpit/NOWE/build/CMakeFiles/edit_cache.dir
