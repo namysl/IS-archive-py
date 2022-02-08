@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/enraha/Desktop/git-repo/semestr-5/unix_git_bash/make_cmake/lab-cmake2/comp/lib_comp/src/mainapp.cpp
+Student.h
+/home/enraha/Desktop/git-repo/semestr-5/unix_git_bash/make_cmake/lab-cmake2/comp/lib_comp/src/Student.h
+
+/home/enraha/Desktop/git-repo/semestr-5/unix_git_bash/make_cmake/lab-cmake2/comp/shared_lib/src/Student.cpp
+iostream
+-
+Student.h
+/home/enraha/Desktop/git-repo/semestr-5/unix_git_bash/make_cmake/lab-cmake2/comp/shared_lib/src/Student.h
+
+include/Student.h
+string
+-
+

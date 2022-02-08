@@ -1,0 +1,12 @@
+cmake_minimum_required(VERSION 2.6)
+project(bbb)
+include_directories(include)
+#add_library(Student STATIC src/Student.cpp)
+#install(TARGETS Student DESTINATION ~/Desktop)
+
+
+
+
+link_directories(/home/krtalbns/Desktop)
+add_executable(main src/mainapp.cpp)
+target_link_libraries(main libStudent.a)

@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8.9)
+project(hello)
+
+include_directories(include)
+
+add_executable(hello ./src/hw_hello.c ./src/hw_main.c ./src/hw_power.c)

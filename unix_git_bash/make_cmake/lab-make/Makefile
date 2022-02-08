@@ -11,7 +11,6 @@ EXEC   = hello
 # $@ nazwa celu
 # $+ nazwy prerekwizytow
 
-
 all: $(EXEC)
 
 $(EXEC): $(OBJS)
@@ -26,11 +25,15 @@ hw_hello.o: hw_defs.h
 hw_power.o: hw_defs.h
 
 clean:
+	#usuwa pliki kopii zapasowych:
 	rm -f *~
 	rm -f *.bak
-	rm -f $(EXEC) $(OBJS)
+	#usuwa wszystkie pliki wynikowe powstajace w procesie kompilacji
+	rm -f hello hw_main.o hw_hello.o hw_power.o
 
-.PHONY: clean
+
+	#cel pozorny
+.PHONY: clean  
 
 install: all
 	sh -c "if [ ! -d $(DESTDIR) ] ; then mkdir $(DESTDIR) ; fi"

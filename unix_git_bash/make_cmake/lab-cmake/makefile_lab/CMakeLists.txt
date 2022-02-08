@@ -1,6 +1,0 @@
-cmake_minimum_required(VERSION 2.6)
-project(HELLO)
-#set(SOURCES hw_hello.c hw_main.c hw_power.c)
-file(GLOB SOURCES *.c)
-add_executable(helwor ${SOURCES})
-install(TARGETS helwor DESTINATION ~/Pulpit/build_nowy)
