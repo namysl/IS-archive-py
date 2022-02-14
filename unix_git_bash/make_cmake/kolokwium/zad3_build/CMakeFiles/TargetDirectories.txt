@@ -1,0 +1,7 @@
+/home/enraha/Desktop/kolokwium2/zad3_build/CMakeFiles/install/strip.dir
+/home/enraha/Desktop/kolokwium2/zad3_build/CMakeFiles/install/local.dir
+/home/enraha/Desktop/kolokwium2/zad3_build/CMakeFiles/install.dir
+/home/enraha/Desktop/kolokwium2/zad3_build/CMakeFiles/list_install_components.dir
+/home/enraha/Desktop/kolokwium2/zad3_build/CMakeFiles/rebuild_cache.dir
+/home/enraha/Desktop/kolokwium2/zad3_build/CMakeFiles/edit_cache.dir
+/home/enraha/Desktop/kolokwium2/zad3_build/CMakeFiles/emp_add.dir
