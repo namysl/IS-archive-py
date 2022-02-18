@@ -1,5 +1,3 @@
-# rzygoła
-
 ├── Python_archiwum  
 │   ├── aip_lab  
 │   ├── aisd_konwersatorium  
@@ -58,4 +56,3 @@
 │       └── skrypty  
 │  
 └── semestr_6  
-  
