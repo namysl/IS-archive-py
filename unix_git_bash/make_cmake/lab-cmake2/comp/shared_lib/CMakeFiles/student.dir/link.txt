@@ -1,1 +1,0 @@
-/usr/bin/c++    -rdynamic CMakeFiles/student.dir/src/Student.cpp.o CMakeFiles/student.dir/home/enraha/Desktop/git-repo/semestr-5/unix_git_bash/make_cmake/lab-cmake2/comp/lib_comp/src/mainapp.cpp.o  -o student 

@@ -1,9 +1,0 @@
-#!/bin/bash
-#
-# Szyfruje tekst ze STDIN metoda ROT13 i posyla na STDOUT
-#
-while read LINE
-do
-echo `echo $LINE | tr abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM`
-done
-

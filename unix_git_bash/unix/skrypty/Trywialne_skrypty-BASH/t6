@@ -1,6 +1,0 @@
-#!/bin/bash
-echo "Zamiana malych liter na duze"
-echo "Podaj ciag znakow:"
-read LINE
-echo `echo $LINE | tr '[a-z]' '[A-Z]'`
-

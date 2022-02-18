@@ -1,9 +1,0 @@
-make help
-
-dwa katalogi (równoległe), jeden na build, drugi na źródło (cmakelists w źródło)
-cmake ścieżkadokataloguzcmakefiles.txt
-
-makefile utworzy się w build
-
-make install ->
-install ... zainstaluje w katalogu destination

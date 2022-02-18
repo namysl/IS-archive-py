@@ -1,7 +1,0 @@
-cmake_minimum_required(VERSION 2.8)
-project(EMP_ADD)
-#file(GLOB SOURCES *.cpp)
-include_directories(include)
-set(SOURCES src/main.cpp src/address.cpp src/employee.cpp)
-add_executable(emp_add ${SOURCES})
-install(TARGETS emp_add DESTINATION ~/Desktop/kolokwium2/zad3_build)

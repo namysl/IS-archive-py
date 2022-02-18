@@ -1,1 +1,0 @@
-/usr/bin/cc   -rdynamic CMakeFiles/hello.dir/src/hw_hello.c.o CMakeFiles/hello.dir/src/hw_main.c.o CMakeFiles/hello.dir/src/hw_power.c.o  -o hello 

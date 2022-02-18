@@ -1,3 +1,0 @@
-/home/enraha/Desktop/git-repo/semestr-5/unix_git_bash/make_cmake/lab-cmake2/comp/simple_comp/CMakeFiles/rebuild_cache.dir
-/home/enraha/Desktop/git-repo/semestr-5/unix_git_bash/make_cmake/lab-cmake2/comp/simple_comp/CMakeFiles/edit_cache.dir
-/home/enraha/Desktop/git-repo/semestr-5/unix_git_bash/make_cmake/lab-cmake2/comp/simple_comp/CMakeFiles/helloworld.dir
