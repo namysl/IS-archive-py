@@ -36,9 +36,7 @@
 │   │   ├── zajecia09  
 │   │   ├── zajecia10  
 │   │   └── zajecia11  
-│   │  
 │   ├── Git  
-│   │  
 │   ├── Java  
 │   │   ├── cwiczenia  
 │   │   ├── kolos  
@@ -51,13 +49,11 @@
 │   │   ├── zajecia07_Serwer HTTP  
 │   │   ├── zajecia08_Kalkulator  
 │   │   └── zajecia09_Arcanoid  
-│   │  
 │   ├── Make_CMake  
 │   │   ├── kolokwium  
 │   │   ├── lab-cmake  
 │   │   ├── lab-cmake2  
 │   │   └── lab-make  
-│   │  
 │   └── Unix  
 │       └── skrypty  
 │  
