@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "Dodawanie liczb calkowitych X+Y"
+echo "Podaj X:"
+read X
+echo "Podaj Y:"
+read Y
+Z=`expr $X + $Y`
+echo "Wynik X+Y=$Z" 
+

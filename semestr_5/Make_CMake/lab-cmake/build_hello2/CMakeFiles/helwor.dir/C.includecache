@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/student/Pulpit/NOWE/makefile_lab/hw_defs.h
+
+/home/student/Pulpit/NOWE/makefile_lab/hw_hello.c
+stdio.h
+-
+hw_defs.h
+/home/student/Pulpit/NOWE/makefile_lab/hw_defs.h
+
+/home/student/Pulpit/NOWE/makefile_lab/hw_hello.h
+
+/home/student/Pulpit/NOWE/makefile_lab/hw_main.c
+hw_defs.h
+/home/student/Pulpit/NOWE/makefile_lab/hw_defs.h
+hw_hello.h
+/home/student/Pulpit/NOWE/makefile_lab/hw_hello.h
+hw_power.h
+/home/student/Pulpit/NOWE/makefile_lab/hw_power.h
+
+/home/student/Pulpit/NOWE/makefile_lab/hw_power.c
+stdio.h
+-
+math.h
+-
+hw_defs.h
+/home/student/Pulpit/NOWE/makefile_lab/hw_defs.h
+
+/home/student/Pulpit/NOWE/makefile_lab/hw_power.h
+

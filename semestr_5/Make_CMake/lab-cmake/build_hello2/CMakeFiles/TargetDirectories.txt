@@ -1,0 +1,7 @@
+/home/student/Pulpit/NOWE/build_hello/CMakeFiles/install/strip.dir
+/home/student/Pulpit/NOWE/build_hello/CMakeFiles/edit_cache.dir
+/home/student/Pulpit/NOWE/build_hello/CMakeFiles/rebuild_cache.dir
+/home/student/Pulpit/NOWE/build_hello/CMakeFiles/list_install_components.dir
+/home/student/Pulpit/NOWE/build_hello/CMakeFiles/install/local.dir
+/home/student/Pulpit/NOWE/build_hello/CMakeFiles/helwor.dir
+/home/student/Pulpit/NOWE/build_hello/CMakeFiles/install.dir

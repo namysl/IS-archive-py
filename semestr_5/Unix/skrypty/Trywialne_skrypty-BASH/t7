@@ -1,0 +1,9 @@
+#!/bin/bash
+#
+# 'Interakcyjny' ROT13
+#
+echo "Szyfr ROT13"
+echo "Podaj ciag znakow:"
+read LINE
+echo `echo $LINE | tr abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM`
+

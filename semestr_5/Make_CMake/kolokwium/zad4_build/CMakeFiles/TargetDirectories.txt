@@ -1,0 +1,8 @@
+/home/enraha/Desktop/kolokwium2/zad4_build/CMakeFiles/install/strip.dir
+/home/enraha/Desktop/kolokwium2/zad4_build/CMakeFiles/install/local.dir
+/home/enraha/Desktop/kolokwium2/zad4_build/CMakeFiles/install.dir
+/home/enraha/Desktop/kolokwium2/zad4_build/CMakeFiles/list_install_components.dir
+/home/enraha/Desktop/kolokwium2/zad4_build/CMakeFiles/rebuild_cache.dir
+/home/enraha/Desktop/kolokwium2/zad4_build/CMakeFiles/edit_cache.dir
+/home/enraha/Desktop/kolokwium2/zad4_build/CMakeFiles/stud_exec.dir
+/home/enraha/Desktop/kolokwium2/zad4_build/CMakeFiles/student.dir

@@ -1,0 +1,48 @@
+Zad 1
+Proszę utworzyć repozytorium w github.com, załadować tam wszystkie pliki utworzone podczas pisania tego kolokwium
+Adres repozytorium proszę przesłać prowadzącemu.
+
+
+Zad 2
+Praca z plikiem Makefile
+Wymagania
+1. Napisz plik makefile tak by zbudować odpowiedni program wykonywalny o nazwie myProgram
+2. Używaj kompilatora g++
+3. Plik Makefile musi działać na plikach źródłowych z katalogu zad2
+4. Jeżeli napisałeś makefile poprawnie to program testujący test_build.sh da odpowiedni wynik:
+1. touch everything - everything should build
+g++ -c main.cpp
+g++ -c employee.cpp
+g++ -c address.cpp
+g++ -o myProgram main.o employee.o address.o
+
+2. touch nothing - nothing should build
+make: `myProgram' is up to date.
+
+3. touch address.h - main and employee should build
+g++ -c main.cpp
+g++ -c employee.cpp
+g++ -o myProgram main.o employee.o address.o
+
+4. touch main.cpp - only main.o should build
+g++ -c main.cpp
+g++ -o myProgram main.o employee.o address.o
+
+5. touch employee.cpp - only employee.o should build
+g++ -c employee.cpp
+g++ -o myProgram main.o employee.o address.o
+
+6. touch address.cpp - only address.o should build
+g++ -c address.cpp
+g++ -o myProgram main.o employee.o address.o
+
+
+Zad 3
+Utwórz pliki cmake dla zad2. Pamiętaj o separacji drzewa binarnego i źródłowego.
+
+
+Zad 4
+W katalogu zad4 znajdziesz pliki do budowy programy wykonywalnego.
+Program ten aby działał musi korzystać z biblioteki statycznej lub dynamicznej.
+Napisz odpowiedni cmakefile. 
+Program wykonywalny winien być zainstalowany w lokalizacji ./bin, a biblioteka w ./lib

@@ -1,0 +1,1 @@
+/usr/bin/cc   -rdynamic CMakeFiles/helwor.dir/hw_hello.c.o CMakeFiles/helwor.dir/hw_main.c.o CMakeFiles/helwor.dir/hw_power.c.o  -o helwor 

@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/emp_add.dir/src/main.cpp.o CMakeFiles/emp_add.dir/src/address.cpp.o CMakeFiles/emp_add.dir/src/employee.cpp.o  -o emp_add 

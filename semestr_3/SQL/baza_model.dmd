@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="baza7" id="756ED001-2DF8-3AD3-EC09-1791AB8E5E44" version="3.5">
+<createdBy>KretAlbinos</createdBy>
+<createdTime>2021-01-11 19:21:33 UTC</createdTime>
+<ownerDesignName>baza4</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>756ED001-2DF8-3AD3-EC09-1791AB8E5E44</designId>
+<usedDesignStorageDescriptors>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="52EEACB9-4435-1E43-B493-1ED8A882B06E">
+<designStoragePath>C:\Users\KretAlbinos\Desktop\developer baza</designStoragePath>
+</designDescr>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="5D1AD99C-24A8-93BB-D68C-022935ECF6A7">
+<designStoragePath>C:\Users\KretAlbinos\Desktop\aktualizacja baza</designStoragePath>
+</designDescr>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="DFF5CD70-075B-F89A-4288-D38440B7E6F9">
+<designStoragePath>C:\Users\KretAlbinos\Desktop\baza3</designStoragePath>
+</designDescr>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="79DBB0A4-E2ED-04E2-E251-B09CFAC4F7DC">
+<designStoragePath>C:\Users\KretAlbinos\Desktop\datamodeler projekt\baza4</designStoragePath>
+</designDescr>
+</usedDesignStorageDescriptors>
+</OSDM_Design>

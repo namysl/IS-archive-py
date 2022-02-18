@@ -1,0 +1,165 @@
+CREATE OR REPLACE VIEW OSOBY_STOW_BYTOM AS
+SELECT w.PESEL_wolo "ID", w.imie, w.nazwisko, w.PESEL_koor "ID prze³o¿ony"
+FROM WOLONTARIUSZ w, STOWARZYSZENIE s, KOORDYNATOR k
+WHERE w.PESEL_koor = k.PESEL_koor 
+AND s.KRS_stowarzyszenie = k.KRS_stowarzyszenie
+AND upper(s.miasto) = upper('Bytom')
+UNION
+SELECT k.PESEL_koor "ID", k.imie, k.nazwisko, k.PESEL_przelozony "ID prze³o¿ony"
+FROM KOORDYNATOR k, STOWARZYSZENIE s
+WHERE s.KRS_stowarzyszenie = k.KRS_stowarzyszenie
+AND upper(s.miasto) = upper('Bytom')
+ORDER BY nazwisko;
+
+
+CREATE OR REPLACE VIEW OSOBY_STOW_TYCHY AS
+SELECT w.PESEL_wolo "ID", w.imie, w.nazwisko, w.PESEL_koor "ID prze³o¿ony"
+FROM WOLONTARIUSZ w, STOWARZYSZENIE s, KOORDYNATOR k
+WHERE w.PESEL_koor = k.PESEL_koor 
+AND s.KRS_stowarzyszenie = k.KRS_stowarzyszenie
+AND upper(s.miasto) = upper('Tychy')
+UNION
+SELECT k.PESEL_koor "ID", k.imie, k.nazwisko, k.PESEL_przelozony "ID prze³o¿ony"
+FROM KOORDYNATOR k, STOWARZYSZENIE s
+WHERE s.KRS_stowarzyszenie = k.KRS_stowarzyszenie
+AND upper(s.miasto) = upper('Tychy')
+ORDER BY nazwisko;
+
+
+CREATE OR REPLACE VIEW OSOBY_STOW_OSW AS
+SELECT w.PESEL_wolo "ID", w.imie, w.nazwisko, w.PESEL_koor "ID prze³o¿ony"
+FROM WOLONTARIUSZ w, STOWARZYSZENIE s, KOORDYNATOR k
+WHERE w.PESEL_koor = k.PESEL_koor 
+AND s.KRS_stowarzyszenie = k.KRS_stowarzyszenie
+AND upper(s.miasto) = upper('Ostrów Wielkopolski')
+UNION
+SELECT k.PESEL_koor "ID", k.imie, k.nazwisko, k.PESEL_przelozony "ID prze³o¿ony"
+FROM KOORDYNATOR k, STOWARZYSZENIE s
+WHERE s.KRS_stowarzyszenie = k.KRS_stowarzyszenie
+AND upper(s.miasto) = upper('Ostrów Wielkopolski')
+ORDER BY nazwisko;
+
+
+CREATE OR REPLACE VIEW OSOBY_STOW_POZNAN AS
+SELECT w.PESEL_wolo "ID", w.imie, w.nazwisko, w.PESEL_koor "ID prze³o¿ony"
+FROM WOLONTARIUSZ w, STOWARZYSZENIE s, KOORDYNATOR k
+WHERE w.PESEL_koor = k.PESEL_koor 
+AND s.KRS_stowarzyszenie = k.KRS_stowarzyszenie
+AND upper(s.miasto) = upper('Poznañ')
+UNION
+SELECT k.PESEL_koor "ID", k.imie, k.nazwisko, k.PESEL_przelozony "ID prze³o¿ony"
+FROM KOORDYNATOR k, STOWARZYSZENIE s
+WHERE s.KRS_stowarzyszenie = k.KRS_stowarzyszenie
+AND upper(s.miasto) = upper('Poznañ')
+ORDER BY nazwisko;
+
+
+CREATE OR REPLACE VIEW OSOBY_STOW_WROC AS
+SELECT w.PESEL_wolo "ID", w.imie, w.nazwisko, w.PESEL_koor "ID prze³o¿ony"
+FROM WOLONTARIUSZ w, STOWARZYSZENIE s, KOORDYNATOR k
+WHERE w.PESEL_koor = k.PESEL_koor 
+AND s.KRS_stowarzyszenie = k.KRS_stowarzyszenie
+AND upper(s.miasto) = upper('Wroc³aw')
+UNION
+SELECT k.PESEL_koor "ID", k.imie, k.nazwisko, k.PESEL_przelozony "ID prze³o¿ony"
+FROM KOORDYNATOR k, STOWARZYSZENIE s
+WHERE s.KRS_stowarzyszenie = k.KRS_stowarzyszenie
+AND upper(s.miasto) = upper('Wroc³aw')
+ORDER BY nazwisko;
+
+
+
+
+
+CREATE OR REPLACE VIEW ADOPCJE_ZAKONCZONE AS
+SELECT a.nr_umowy_adop "numer umowy", a.data_rozpoczecia "data rozpoczêcia",  
+a.data_adopcji "data adopcji", z.ID_zwierze "ID zwierzê", z.imie "imiê zwierzêcia",
+z.gatunek "gatunek", o.PESEL_opie "ID opiekun", o.imie ||' '|| o.nazwisko "opiekun", 
+w.PESEL_wolo "ID wolontariusz", w.imie ||' '|| w.nazwisko "wolontariusz"
+FROM WOLONTARIUSZ w, OPIEKUN o, ZWIERZE z, ADOPCJA a
+WHERE 
+w.PESEL_wolo = o.PESEL_wolo
+AND
+o.PESEL_opie = z.PESEL_opie
+AND
+z.ID_zwierze = a.ID_zwierze
+AND
+a.status_adopcji = 'zakoñczona';
+
+
+
+
+CREATE OR REPLACE VIEW ADOPCJE_NIEROZSTRZYGNIETE AS
+SELECT a.status_adopcji, a.nr_umowy_adop "numer umowy", 
+a.data_rozpoczecia "data rozpoczêcia", a.data_adopcji "data adopcji", 
+z.ID_zwierze "ID zwierzê", z.imie "imiê zwierzêcia",
+z.gatunek "gatunek", o.PESEL_opie "ID opiekun", o.imie ||' '|| o.nazwisko "opiekun", 
+w.PESEL_wolo "ID wolontariusz", w.imie ||' '|| w.nazwisko "wolontariusz"
+FROM WOLONTARIUSZ w, OPIEKUN o, ZWIERZE z, ADOPCJA a
+WHERE 
+w.PESEL_wolo = o.PESEL_wolo
+AND
+o.PESEL_opie = z.PESEL_opie
+AND
+z.ID_zwierze = a.ID_zwierze
+AND
+(a.status_adopcji = 'w toku' OR a.status_adopcji = 'zawieszona'
+OR a.status_adopcji = 'rozpoczêta');
+
+
+
+
+CREATE OR REPLACE VIEW ZWIERZETA_NIEADOPTOWANE AS
+SELECT *
+FROM ZWIERZE z
+MINUS
+SELECT z.*
+FROM ZWIERZE z, ADOPCJA a
+WHERE z.ID_zwierze = a.ID_zwierze;
+
+
+
+
+CREATE OR REPLACE VIEW PRZEWLEKLE_CHOROBY AS
+SELECT z.ID_zwierze, z.imie, z.gatunek, z.wiek, 
+s_z.nazwa_choroby "choroba", we.imie ||' '|| we.nazwisko "weterynarz", 
+we.telefon
+FROM ZWIERZE z, STAN_ZDROWIA s_z, WETERYNARZ we
+WHERE z.ID_zwierze = s_z.ID_zwierze
+AND we.telefon = z.telefon_weterynarz
+AND s_z.rozwoj_choroby = 'przewlek³a';
+
+
+
+
+CREATE OR REPLACE VIEW BEZ_HISTORII_CHOROB AS
+SELECT *
+FROM ZWIERZE z
+MINUS
+SELECT z.*
+FROM ZWIERZE z, STAN_ZDROWIA s_z
+WHERE z.ID_zwierze = s_z.ID_zwierze;
+
+
+
+
+CREATE OR REPLACE VIEW WPLYWY AS
+SELECT s.KRS_stowarzyszenie "KRS", s.miasto, ws.kwota, ws.typ_wplaty,
+d.imie ||' '|| d.nazwisko "osoba", d.nazwa_firmy
+FROM STOWARZYSZENIE s, WSPARCIE ws, DARCZYNCA d
+WHERE s.KRS_stowarzyszenie = ws.krs_stowarzyszenie
+AND ws.id_darczynca = d.id_darczynca
+ORDER by KRS;
+
+
+
+
+CREATE OR REPLACE VIEW ZASOBY AS
+SELECT s.KRS_stowarzyszenie "KRS", s.miasto, p.nazwa_produktu, 
+n_s.ilosc, n_s.jednostka_dla_ilosci
+FROM STOWARZYSZENIE s, NA_STANIE n_s, PRODUKT p
+WHERE s.KRS_stowarzyszenie = n_s.KRS_stowarzyszenie
+AND n_s.kod_ean = p.kod_ean
+ORDER by KRS;
+
+

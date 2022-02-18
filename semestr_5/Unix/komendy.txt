@@ -1,0 +1,189 @@
+root ma uid=0
+pwd			-> gdzie aktualnie jestes
+tree			-> drzewo katalogow
+
+$			-> user
+#			-> root
+
+echo ~			-> katalog domowy usera (echo $HOME)
+
+ctrl + r		-> historia komend
+
+..			-> katalog wyzszy
+.			-> katalog aktualny w ktorym jestesmy
+
+su			-> switch user
+
+tty			-> prints the file name of terminal connected to standard input
+
+sensors			-> cpu/pci temperature
+lscpu			-> list cpu
+free -h			-> shows RAM + swap usage
+
+mc			-> midnight commander
+uname -a		-> unix name
+
+net-tools/ifconfig	-> rozne narzedzia sieciowe
+ip addr
+
+env			-> display all available variables in the system
+path			-> sciezka dostepu
+
+$ spacja + tab		-> wszystkie polecenia (nie dziala w ubuntu)
+
+lftp			-> file transfer program
+
+locate			-> find files by name
+which + polecenie	-> sciezka polecenia
+whereis			-> gdzie znajduja sie binarki, zrodla, manuale etc. dla polecenia
+
+id			-> zwraca informacje o userze, typu do jakich grup nalezy, jakie ma id etc.
+who			-> kto jest zalogowany
+id -u			-> zwraca sam numer id aktualnego uzytkownika
+
+passwd			-> zmiana hasla
+
+date			-> zwraca date
+
+dd			-> convert and copy a file
+du			-> estimate file space usage (-h -> human)
+
+df			-> woluminy
+
+TZ=CET date		-> zmiana strefy czasowej
+
+lost+found		-> osierocone pliki :CC
+fsck			-> check and repair a linux filesystem
+
+stty			-> change and print terminal line settins
+
+cat | cat		-> wpisujesz tekst i w nastepnej linii go printuje
+
+cat >plik.txt		-> pisz bzdury tu
+cat plik.txt		-> no i w srodku sa bzdury
+
+more/less		-> wyswietlanie zawartosci plikow (less ma wiecej opcji)
+tail/head		-> wyswietla poczatek lub koniec zawartosci pliku
+
+echo
+echo blabla
+blabla=1		-> zmienna
+echo $blabla
+
+file `which [`
+ls -LF `which [`
+ldd `which [`		-> print shared object dependencies
+[ 1 ] ; echo $?		-> zwraca 0 (prawda)
+[ 2 -eq 0 ] ; echo $?	-> zwraca 1 (falsz), w linuxie cokolwiek poza 0 jest falszem
+
+[ ]			-> mozna uzywac do porownan wartosci i sprawdzania typu pliku etc.
+
+alias			-> najlepiej zaliasowac komus rm -rf /
+
+export name=value	-> creating new environment variable
+unset var_name		-> removing an environment variable
+
+ctrl + alt + F1-6	-> tty konsole
+xterm&			-> emulator terminala x window
+
+|			-> pipe/potok
+ls -la | wc
+
+df			-> report file system disk space usage
+
+*			-> zastepuje dowolny ciag znakow
+?			-> zastepuje jeden znak
+
+mkdir nazwa{00..10}	-> tworzy katalog o wybranej nazwie i numeruje
+
+chown			-> change file owner and group
+
+ps aux			-> wyswietla wszystkie procesy uruchomione przez nas
+
+ctrl + z		-> zatrzymuje proces
+fg			-> ostatni zatrzymany proces jest wznowiony
+jobs			-> wypisuje procesy, ktore zostaly zatrzymane
+
+ctr + d/c		-> przerywa proces
+kill nazwa_proc -g	-> kill the mentioned process
+
+printenv/env		-> lista zmiennych srodowiskowych
+export nazwa=wartosc	-> okreslenie wlasnej zmiennej srodowiskowej
+
+tail			-> wypisywanie 10 linii od konca
+head			-> wypisywanie 10 linii od poczatku
+
+find -name nazwapliku	-> lepsze kiedy skupiasz sie na konkretnym miejscu
+locate			-> lepsze kiedy szukasz pliku o danej nazwie
+			   jest tez szybszy, ale trzeba aktualizowac baze plikow
+
+>			-> nadpisuje plik
+>>			-> dopisuje dane na koncu pliku
+
+
+" "			-> zachowuje znaczenie specjalne trzech znakow:
+				$   wskazuje nazwe zmiennej
+				\   znak maskujacy
+				` ` umozliwia zacytowanie i wykonanie  polecenia
+
+' '			-> wszystko co jest w apostrofach traktowane jest
+			   jako lanuch tekstowy, znaki specjalne sa traktowane
+			   jak zwykle znaki
+
+` `			-> umozliwia zacytowanie polecenia, przydatne gdy 
+			   chcemy, by pod zmienna podstawic wynik polecenia,
+			   np.:
+
+				x = `ls-la $PWD`
+				echo $x
+
+\			-> wylacza interpretacje znakowo, zmiennych etc.
+
+
+/etc/fstab		-> file system that is automatically mounted to
+			   linux when booting
+
+sysfs			-> virtual file system, outputs the information of
+			   devices and drivers from kernel space to user
+			   space and can be used to make settings for 
+			   devices and drivers
+
+udev			-> user space tool, uses the information provided
+			   by sysfs to implement all the functions of devfs
+			   (devfs runs in kernel space)
+
+tmpfs			-> can use your RAM (like a virtual disk) and swap
+			   partition for storage
+			   it's a file system, not a block device
+
+SUID			-> set-user identification, chmod 4555 "path to file"
+			   non-root user can change his own password by this
+
+SGID			-> set-group identification, chmod 2555
+
+SVTX (sticky bit)	-> used on shared directories, user cannot deleted
+			   other user's file, even if he can rwx it
+			   chmod +t "path to dir" or chmod 1777 "path"
+
+
+aptitude		-> program do instalacji/usuwania pakietow (apt)
+
+file `which firefox`
+$PATH
+ldd
+dd
+du 
+df
+dmesg
+/ ? -> to szukania do przodu i tyłu w man
+ls -l `which [`
+ls -li   <- node number
+echo $?		-> zwraca kod na wyjsciu ostatniego puszczonego skryptu
+
+PATH=$PATH:.
+export PATH=$PATH:.
+bc			-> kalkulator
+tr
+;;			-> terminator
+sed
+
