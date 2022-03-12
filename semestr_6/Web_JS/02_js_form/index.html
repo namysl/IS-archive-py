@@ -9,60 +9,59 @@
 <body>
 <script>
 
-function oblicz(form){
-	//pomieszczenie 
-	pokoj_h = document.getElementById('pokoj_h').value;
-	pokoj_a = document.getElementById('pokoj_a').value;
-	pokoj_b = document.getElementById('pokoj_b').value;
-	
-	p_pokoj = 2*(pokoj_a * pokoj_h) + 2*(pokoj_b * pokoj_h);
-	console.log('p_pokoj1: ' + p_pokoj);
-	
-	const cb_drzwi = document.querySelector('#cb_drzwi');
-    console.log('cb_drzwi: ' + cb_drzwi.checked);
-	
-	if(cb_drzwi.checked){
-		drzwi_a = document.getElementById('drzwi_a').value;
-		drzwi_b = document.getElementById('drzwi_b').value;
+	function oblicz(form){
+		//pomieszczenie 
+		pokoj_h = document.getElementById('pokoj_h').value;
+		pokoj_a = document.getElementById('pokoj_a').value;
+		pokoj_b = document.getElementById('pokoj_b').value;
 		
-		p_pokoj = p_pokoj - (drzwi_a * drzwi_b);
-		console.log('p_pokoj - drzwi: ' + p_pokoj);
-	}
-	
-	const cb_okno = document.querySelector('#cb_okno');
-    console.log('cb_okno: ' + cb_okno.checked);
-	
-	if(cb_okno.checked){
-		okno_a = document.getElementById('okno_a').value;
-		okno_b = document.getElementById('okno_b').value;
+		p_pokoj = 2*(pokoj_a * pokoj_h) + 2*(pokoj_b * pokoj_h);
+		console.log('p_pokoj1: ' + p_pokoj);
 		
-		p_pokoj = p_pokoj - (okno_a * okno_b);
-		console.log('p_pokoj - okno: ' + p_pokoj);
-	}
-	
-	console.log('p_pokoj2: ' + p_pokoj);
-	
-	//farba
-	litry = document.getElementById('litry').value;
-	wydajnosc = document.getElementById('wydajnosc').value;
-	
-	farba = litry * wydajnosc;
+		const cb_drzwi = document.querySelector('#cb_drzwi');
+		console.log('cb_drzwi: ' + cb_drzwi.checked);
+		
+		if(cb_drzwi.checked){
+			drzwi_a = document.getElementById('drzwi_a').value;
+			drzwi_b = document.getElementById('drzwi_b').value;
+			
+			p_pokoj = p_pokoj - (drzwi_a * drzwi_b);
+			console.log('p_pokoj - drzwi: ' + p_pokoj);
+		}
+		
+		const cb_okno = document.querySelector('#cb_okno');
+		console.log('cb_okno: ' + cb_okno.checked);
+		
+		if(cb_okno.checked){
+			okno_a = document.getElementById('okno_a').value;
+			okno_b = document.getElementById('okno_b').value;
+			
+			p_pokoj = p_pokoj - (okno_a * okno_b);
+			console.log('p_pokoj - okno: ' + p_pokoj);
+		}
+		
+		console.log('p_pokoj2: ' + p_pokoj);
+		
+		//farba
+		litry = document.getElementById('litry').value;
+		wydajnosc = document.getElementById('wydajnosc').value;
+		
+		farba = litry * wydajnosc;
 
-	wynik_sciana = document.getElementById('wynik_sciana');
-	wynik_sciana.innerHTML = p_pokoj + ' m<sup>2</sup>';
-	wynik_farba = document.getElementById('wynik_farba');
-	wynik_farba.innerHTML = farba + ' m<sup>2</sup>';
-	
-	czy_wiecej = document.getElementById('czy_wiecej');
-	
-	if (p_pokoj > wynik_farba){
-		czy_wiecej.innerHTML = 'tak';
+		wynik_sciana = document.getElementById('wynik_sciana');
+		wynik_sciana.innerHTML = p_pokoj + ' m<sup>2</sup>';
+		wynik_farba = document.getElementById('wynik_farba');
+		wynik_farba.innerHTML = farba + ' m<sup>2</sup>';
+		
+		czy_wiecej = document.getElementById('czy_wiecej');
+		
+		if (p_pokoj > farba){
+			czy_wiecej.innerHTML = 'tak';
+		}
+		else{
+			czy_wiecej.innerHTML = 'nie';
+		}
 	}
-	else{
-		czy_wiecej.innerHTML = 'nie';
-	}
-
-}
 
 </script>
 
@@ -70,7 +69,6 @@ function oblicz(form){
 <h1>Kalkulator wydajności farby<br>do malowania ścian</h1>
 
 <form>
-	
 	<p>
 		<label for="litry">Pojemność farby [L]:</label><br>
 		<input type="number" step="any" id="litry"><br>
