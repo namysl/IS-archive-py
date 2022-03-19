@@ -1,0 +1,115 @@
+
+
+<HEAD>
+<TITLE>Freq calculator</TITLE>
+<body bgcolor="#000000" text="#C4C4C4"  >
+
+<SCRIPT>
+<!-- HIDE FROM OTHER BROWSERS
+function calculatelc(form,currentField) {
+
+  if (currentField == "L") {
+    form.C.value = (159.2356688/form.f.value)*(159.2356688/form.f.value)/form.L.value;
+    form.f.value = 159.2356688/Math.sqrt(form.C.value*form.L.value); 
+  } else if (currentField == "C") {
+    form.L.value = (159.2356688/form.f.value)*(159.2356688/form.f.value)/form.C.value;
+    form.f.value = 159.2356688/Math.sqrt(form.C.value*form.L.value); 
+  } else {
+    form.C.value = (159.2356688/form.f.value)*(159.2356688/form.f.value)/form.L.value;
+    form.L.value = (159.2356688/form.f.value)*(159.2356688/form.f.value)/form.C.value;
+  }
+
+}
+
+function calculates(form,currentField) {
+
+  if (currentField == "d") {
+    form.P.value = 0.7854*form.d.value*form.d.value;
+} else {
+  form.d.value=Math.sqrt(form.P.value/0.7854);
+  }
+
+}
+
+
+
+function calculate(form,currentField) {
+
+  if (currentField == "L") {
+form.z.value=Math.sqrt(form.L.value/12.57e-3*form.l.value/form.S.value);
+form.S.value=form.L.value/12.57e-3*form.l.value/(form.z.value*form.z.value);
+form.l.value=12.57e-3*form.S.value*form.z.value*form.z.value/form.L.value;
+  } else if (currentField == "z") {
+form.S.value=form.L.value/12.57e-3*form.l.value/(form.z.value*form.z.value);
+form.l.value=12.57e-3*form.S.value*form.z.value*form.z.value/form.L.value;
+form.L.value=12.57e-3*form.S.value*form.z.value*form.z.value/form.l.value;
+  } else if (currentField == "l") {
+form.z.value=Math.sqrt(form.L.value/12.57e-3*form.l.value/form.S.value);
+form.S.value=form.L.value/12.57e-3*form.l.value/(form.z.value*form.z.value);
+form.L.value=12.57e-3*form.S.value*form.z.value*form.z.value/form.l.value;
+  } else {
+form.z.value=Math.sqrt(form.L.value/12.57e-3*form.l.value/form.S.value);
+form.l.value=12.57e-3*form.S.value*form.z.value*form.z.value/form.L.value;
+form.L.value=12.57e-3*form.S.value*form.z.value*form.z.value/form.l.value;
+  }
+
+}
+
+
+// STOP HIDING FROM OTHER BROWSERS -->
+</SCRIPT>
+
+</HEAD>
+
+<BODY>
+
+Kalkulator czêstotliwoœci rezonansowej
+<FORM METHOD=POST>
+
+indukcyjnoœæ L[uH]: <INPUT TYPE=text NAME="L" VALUE=1
+              onChange="calculatelc(this.form,'L');"> 
+<br>              
+pojemnoœæ C[pF]: <INPUT TYPE=text NAME="C" VALUE=1
+               onChange="calculatelc(this.form,'C');"> 
+<br>  
+czêstotliwoœæ f[MHz]: <INPUT TYPE=text NAME="f" VALUE=159.2356688
+               onChange="calculatelc(this.form,'f');"> 
+<br>
+
+</FORM>
+<hr>
+Kalkulator parametrów cewki
+<FORM METHOD=POST>
+<br>  
+d³ugoœæ l[cm]: <INPUT TYPE=text NAME="l" VALUE=1
+               onChange="calculate(this.form,'l');"> 
+<br>
+indukcyjnoœæ [uH]: <INPUT TYPE=text NAME="L" VALUE=12.56e-3
+               onChange="calculate(this.form,'L');"> 
+<br>
+
+iloœæ zwojów z[-]: <INPUT TYPE=text NAME="z" VALUE=1
+              onChange="calculate(this.form,'z');"> 
+<br>              
+powierzchnia S[cm<sup>2</sup>]: <INPUT TYPE=text NAME="S" VALUE=1
+               onChange="calculate(this.form,'S');"> 
+
+</FORM>
+
+<hr>
+
+Kalkulator pola powierchni ko³a
+<FORM>
+<br>
+pole P [cm<sup>2</sup>]: <INPUT TYPE=text NAME="P" VALUE=0.785
+               onChange="calculates(this.form,'P');"> 
+<br>
+
+œrednica d[cm]: <INPUT TYPE=text NAME="d" VALUE=1
+              onChange="calculates(this.form,'d');"> 
+
+</form>
+<br><a href="index.html">z powrotem</a>
+</BODY>
+
+</HTML> 

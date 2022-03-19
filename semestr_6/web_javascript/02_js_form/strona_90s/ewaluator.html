@@ -1,0 +1,57 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=ISO-8859-2">
+<title>Ewaluator</title>
+</head>
+<body bgcolor="#000000" text="#C0C0C0"" link="#FFFF00" alink="#FFFFFF" vlink="#00FFFF">
+<script>
+
+function ewaluate(form,currentField) {
+var x=form.xs.value,xx,dif=1,n=1,y=1,yy;
+while (Math.abs(y)>2e-8)
+{
+y=eval(form.in1.value);
+xx=x;
+x+=2e-3;
+yy=eval(form.in1.value);
+x-=2e-3;
+x-=2e-3*y/(yy-y);
+n++;
+if (n>500)
+break;
+}
+if ((n>500)||isNaN(x)) form.out1.value="brak zbieżności"; else
+form.out1.value=x;
+
+}
+
+</script>
+<h1>Kalkulator</h1><br>
+Skrypt rozwiązuje równania numerycznie metodą Newtona. W polu równanie 
+należy wpisać równanie które chcemy rozwiązać tak jakby jedna strona była równa zeru.
+<br>Przykład : <br>
+równanie x^3+7x=1 piszemy w postaci x*x*x+7*x-1
+Potegi wpisujemy albo poprzez określoną ilość mnożeń albo tez uzywając funkcji Math.pow
+<br>Przykład:<br>
+chcemy rozwiązać równanie x^x=7, piszemy w polu wejsciowym Math.pow(x,x)-7.<br>
+Poza funkcją Math.pow możemy używać również innych funkcji z JavaScriptu np
+Math.sin,Math.cos,Math.asin,Math.acos,Math.exp,Math.log (logarytm naturalny).
+Jeżeli procedura iteracji nie jest zbieżna to znaczy że lbo równanie nie
+ma rozwiązania, albo należy zmienić punkt startowy iteracji. Dokładnośc znalezionych
+pierwiastków jest do 7 miejsca po przecinku.
+
+
+<form>
+równanie do rozwiązania
+<input type="text" name="in1" onChange="ewaluate(this.form,'f');" >  
+<br>
+punkt startowy iteracji
+<input type="text" name="xs" onChange="ewaluate(this.form,'f');" value=1>  
+<br>
+pierwiastek
+<input type="text" name="out1" readonly>  
+</form>
+<br><a href="index.html">z powrotem</a>
+</body>
+</html>

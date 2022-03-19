@@ -1,0 +1,56 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>Ewaluator</title>
+</head>
+<body bgcolor="#000000" text="#C0C0C0" link="#FFFF00" alink="#FFFFFF" vlink="#00FFFF">
+<script>
+
+function przelicznik(form, currentField) {
+
+curr = 0;
+
+switch (document.querySelector('input[name="radio_b"]:checked').value){
+    case "1":
+        curr = 141.45;
+        break;
+    case "2":
+        curr = 116.68;
+        break;
+    case "3":
+        curr = 107.12;
+        break;
+}
+
+elem = document.getElementById('Ru_Val').value;
+
+z = document.getElementById('Fin_Val');
+
+z.innerHTML = elem * curr;
+}
+
+</script>
+<h1>Kalkulator rubla:
+
+</h1><br>
+
+<form>
+Ilość pieniędzy:
+<input type="number" id="Ru_Val" >  
+<br>
+</form>
+<input type="radio" id="radio_b_p" name="radio_b" value= 1>
+<label for="pound">funt</label><br>
+
+<input type="radio" id="radio_b_e" name="radio_b" value= 2>
+<label for="euro">euro</label><br>
+
+<input type="radio" id="radio_b_d" name="radio_b" value=3>
+<label for="dolar">dolar</label>
+<br><br>
+<button type="button" onclick="przelicznik(this.form,'f');">Sprawdź</button>
+<br><br>
+W rublach: <div id="Fin_Val" ></div>
+</body>
+</html>
