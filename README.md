@@ -56,7 +56,14 @@
 │       └── skrypty  
 │  
 └── semestr_6  
-│   ├── Web_JS  
-│   ├── mobilne  
-│   │   ├── 01_tutorial 
-
+│   ├── aplikacje_mobilne  
+│   │   ├── 01_tutorial  
+│   │   ├── 02_aforyzmy  
+│   │   └── 03_kalkulator  
+│   ├── bezpieczenstwo_sieci  
+│   ├── proseminarium_inzynierskie  
+│   │   └── prezentacja1  
+│   ├── web_javascript  
+│   │   ├── 01_prosta_strona_HTML_CSS  
+│   │   ├── 02_js_form  
+│   │   └── 03_canvas  
