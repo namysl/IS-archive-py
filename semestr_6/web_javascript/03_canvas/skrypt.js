@@ -71,7 +71,7 @@ function draw_mountains(){
 		if (step > max_step){
 			step = Math.random();
 		}
-		else if (height > 600){  //za wysoko
+		else if (height > 500){  //za wysoko
 			step *= -1;
 			height -= 5;
 		}
@@ -101,10 +101,10 @@ function checkKey(e){
 	else if (e.keyCode=='40'){y++;}
 	else if (e.keyCode=='37'){x--;}
 	else if (e.keyCode=='39'){x++;}
-	if (x<0)   x=0;
-	if (y<0)   y=0;
-	if (x>500) x=500; 
-	if (y>500) x=500;
+	if (x<0)    x = 0;
+	if (y<0)    y = 0;
+	if (x>1000) x = 1000; 
+	if (y>600)  y = 600;
 
 	ctx.clearRect(x, y, 5, 5);
 }
@@ -115,9 +115,9 @@ function mouseev(e){
 	y=e.clientY;
 	if (x<0)   x = 0;
 	if (y<0)   y = 0;
-	if (x>500) x = 500;
-	if (y>500) x = 500;
-	if (en==1) ctx.fillRect(x,y,2,2);
+	if (x>1000) x = 1000;
+	if (y>600) y = 600;
+	if (en==1) ctx.fillRect(x, y, 2, 2);
 }
 
 function mouseevd(e){
