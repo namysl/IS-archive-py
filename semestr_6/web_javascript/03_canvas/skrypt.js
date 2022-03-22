@@ -10,32 +10,11 @@ var x=100; y=100; en=0;
 const cnvs = document.getElementById('canvas1');
 const ctx = cnvs.getContext('2d');
 
-draw_sky("blue", "red", 300);
+draw_sky("blue", "red", 400);
 draw_stars(1, 3, "#FFFFF0");
 draw_sun(15, 25, "#FF5733");
-draw_terrain();
+draw_mountains();
 
-
-function draw_rect(x, y, width, height){
-	ctx.shadowBlur = 0;
-	ctx.fillStyle = "#000000";
-	ctx.fillRect(x, y, width, height);
-}
-
-function draw_terrain(){
-	let rnd = 600;
-
-	for(let i=0; i<700; i++){
-		let a = 2;
-		if(i % 7 == 0 && i % 5 == 0){
-			rnd = randomize(400, 500);
-		}
-		
-		ctx.fillStyle = "#000000";
-		draw_rect(i, 700-rnd+a, 1, rnd+a);
-		a += 100;
-	}
-}
 
 function draw_sky(color1, color2, y_color_change){
 	var gradient = ctx.createLinearGradient(0, 0, 0, y_color_change);
@@ -43,7 +22,7 @@ function draw_sky(color1, color2, y_color_change){
 	gradient.addColorStop(1, color2);
 
 	ctx.fillStyle = gradient;
-	ctx.fillRect(0, 0, 700, 500);
+	ctx.fillRect(0, 0, cnvs.width, cnvs.height);
 }
 
 function draw_stars(range1, range2, color){
@@ -55,8 +34,8 @@ function draw_stars(range1, range2, color){
 }
 
 function draw_sun(range1, range2, color){
-	let rnd_x = randomize(0, 700);
-	let rnd_y = randomize(0, 190);
+	let rnd_x = randomize(0, cnvs.width);
+	let rnd_y = randomize(0, cnvs.height/2);
 	let rnd_size = randomize(range1, range2);
 	
 	var circle = new Path2D();
@@ -67,6 +46,46 @@ function draw_sun(range1, range2, color){
 	ctx.shadowColor = "white";
 	ctx.fillStyle = color;
 	ctx.fill(circle);
+}
+
+function draw_mountains(){
+	ctx.shadowBlur = 0;
+	var gradient = ctx.createLinearGradient(0, 0, 0, 500);
+	gradient.addColorStop(0, "red");
+	gradient.addColorStop(1, "black");
+	ctx.fillStyle = gradient;
+	
+	ctx.translate(0.5, 50);  //przesun
+
+	let height = randomize(0, cnvs.height);
+
+	let step = Math.random();  //poczatkowe nachylenie [0, 1)
+	let change_step = 0.5;  //zmiana nachylenia w kroku
+	let max_step = 5;
+	
+	for (let i=0; i<cnvs.width; i++) {
+		height += step;
+		add_step =  change_step - 2*(change_step * Math.random());
+		step += add_step;
+
+		if (step > max_step){
+			step = Math.random();
+		}
+		else if (height > 600){  //za wysoko
+			step *= -1;
+			height -= 2;
+		}
+		else if (height < 150) {  //za nisko
+			step *= -1;
+			step += 2;
+		}
+
+		//ctx.beginPath();
+		ctx.moveTo(i, cnvs.height);
+		ctx.lineTo(i, height);
+		ctx.strokeStyle = gradient;
+		ctx.stroke();
+	}
 }
 
 function randomize(min, max){
