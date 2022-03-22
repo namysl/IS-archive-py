@@ -73,11 +73,11 @@ function draw_mountains(){
 		}
 		else if (height > 600){  //za wysoko
 			step *= -1;
-			height -= 2;
+			height -= 5;
 		}
 		else if (height < 150) {  //za nisko
 			step *= -1;
-			step += 2;
+			step += 5;
 		}
 
 		//ctx.beginPath();
