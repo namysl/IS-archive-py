@@ -1,20 +1,33 @@
-//scorched earth
-
-document.onkeydown = checkKey;
-document.onmousemove = mouseev;
-document.onmousedown = mouseevd;
-document.onmouseup = mouseevu;
+//document.onkeydown = checkKey;
 
 var x=100; y=100; en=0;
 
 const cnvs = document.getElementById('canvas1');
 const ctx = cnvs.getContext('2d');
 
-draw_sky("blue", "red", 400);
-draw_stars(1, 3, "#FFFFF0");
-draw_sun(15, 25, "#FF5733");
-draw_mountains();
+start();
 
+
+function start(){
+	draw_sky("blue", "red", 400);
+	draw_stars(1, 3, "#FFFFF0");
+	draw_sun(15, 25, "#FF5733");
+	array_xy = draw_mountains();
+	draw_tank(2, array_xy);
+}
+
+function draw_tank(how_many, arr){
+	console.log(arr);
+	colors = ["yellow", "green", "blue", "pink"];
+	
+	for(let i=0; i<how_many; i++){
+		rnd = randomize(5, arr.length-5);
+		
+		ctx.fillStyle = colors[i];
+		ctx.fillRect(arr[rnd][0], arr[rnd][1], 40, 20);
+		ctx.fillRect(arr[rnd][0]+20, arr[rnd][1]-20, 2, 20);
+	}
+}
 
 function draw_sky(color1, color2, y_color_change){
 	var gradient = ctx.createLinearGradient(0, 0, 0, y_color_change);
@@ -49,6 +62,8 @@ function draw_sun(range1, range2, color){
 }
 
 function draw_mountains(){
+	var array = [];
+	
 	ctx.shadowBlur = 0;
 	var gradient = ctx.createLinearGradient(0, 0, 0, 500);
 	gradient.addColorStop(0, "red");
@@ -68,6 +83,10 @@ function draw_mountains(){
 		add_step =  change_step - 2*(change_step * Math.random());
 		step += add_step;
 
+		if (i % 2 == 0 && i % 7 == 0){  //72
+			array.push([i, height]);
+		}
+		
 		if (step > max_step){
 			step = Math.random();
 		}
@@ -86,13 +105,16 @@ function draw_mountains(){
 		ctx.strokeStyle = gradient;
 		ctx.stroke();
 	}
+	//console.log(array);
+	return array;
 }
 
 function randomize(min, max){
-    //random for other functions
+    //random int for other functions
 	return Math.floor(Math.random() * (max - min) ) + min;
 }
 
+/*
 function checkKey(e){
 	//when the user is pressing a key
 	e=e||window.event;
@@ -108,33 +130,4 @@ function checkKey(e){
 
 	ctx.clearRect(x, y, 5, 5);
 }
-
-function mouseev(e){
-	//when the pointer is moving while it is over an element
-	x=e.clientX;
-	y=e.clientY;
-	if (x<0)   x = 0;
-	if (y<0)   y = 0;
-	if (x>1000) x = 1000;
-	if (y>600) y = 600;
-	if (en==1) ctx.fillRect(x, y, 2, 2);
-}
-
-function mouseevd(e){
-	//when the user presses a mouse button over an element
-	en = 1;
-	x = e.clientX;
-	y = e.clientY;
-
-    if ((x>360)&&(x<400)){
-	    if (y<40) 			   ctx.fillStyle="#FF0000";
-	    if ((y>40)&&(y<=80))   ctx.fillStyle="#00FF00";
-	    if ((y>80)&&(y<=120))  ctx.fillStyle="#0000FF";
-	    if ((y>120)&&(y<=160)) ctx.fillStyle="#000000";
-	}
-}
-
-function mouseevu(e){
-    //when a user releases a mouse button over an element
-	en = 0;
-}
+*/
