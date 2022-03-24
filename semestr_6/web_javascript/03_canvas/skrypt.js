@@ -7,7 +7,6 @@ const ctx = cnvs.getContext('2d');
 
 start();
 
-
 function start(){
 	draw_sky("blue", "red", 400);
 	draw_stars(1, 3, "#FFFFF0");
@@ -115,6 +114,12 @@ function randomize(min, max){
 }
 
 /*
+class Tank{
+	constructor(cannon_angle){
+		this.cannon_angle = 0;
+	}
+}
+
 function checkKey(e){
 	//when the user is pressing a key
 	e=e||window.event;
