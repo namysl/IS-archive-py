@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+<script src="./jq21hide_files/jquery.min.js.pobrane"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $("p").fadeOut(2000);
+        $("p").fadeIn(2000);
+//        $("p").fadeOut(2000);
+//        $("p").fadeOut("slow");
+//         $("p").fadeToggle(2000);
+//        $("p").hide();
+$("p").fadeTo("slow", 0.3);
+// Na końcu może być callback np:
+// $("p").fadeTo("slow", 0.3,
+//function(){
+//$("p").css("color","red");
+//}
+//);
+
+
+});
+});
+</script>
+
+</head>
+<body>
+
+<h2>Nagłówek</h2>
+
+<p>Tekst1</p>
+<p>Tekst2</p>
+
+<button>Guzik do chowania</button>
+
+
+
+
+
+</body></html>

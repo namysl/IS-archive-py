@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+<script src="./jq21a_animate_files/jquery.min.js.pobrane"></script>
+<script>
+var i=0;
+$(document).ready(function(){
+    $("button").click(function(){
+       $("div").animate({right: '250px'})
+.animate({left: '250px'})
+.animate({bottom: '250px'});
+ });
+// ^ chaining i zachowanie w nowej lini
+
+});
+</script>
+<style>
+body {background-color: yellow;}
+h2   {color: brown;}
+p    {color: red;}
+</style>
+</head>
+<body>
+
+
+
+<h2>Nagłówek</h2>
+
+<div style="height:300px;width:300px;position:relative;">
+<p>Tekst1</p>
+<p>Tekst2</p>
+</div>
+
+
+
+<button>Guzik </button>
+
+
+
+</body></html>

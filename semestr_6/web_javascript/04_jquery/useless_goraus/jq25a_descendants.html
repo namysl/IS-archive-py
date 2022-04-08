@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style>
+.descendants * { 
+    display: block;
+    border: 2px solid lightgrey;
+    color: lightgrey;
+    padding: 5px;
+    margin: 15px;
+}
+</style>
+<script src="./jq25a_descendants_files/jquery.min.js.pobrane"></script>
+<script>
+$(document).ready(function(){
+    $("div").children().css({"color": "green", "border": "3px solid green"});
+});
+</script>
+</head>
+<body>
+
+<div class="descendants" style="width:500px;">div (current element) 
+  <p style="color: green; border: 3px solid green;">p (child)
+    <span>span (grandchild)</span>     
+  </p>
+  <p style="color: green; border: 3px solid green;">p (child)
+    <span>span (grandchild)</span>
+  </p> 
+</div>
+
+
+
+
+</body></html>

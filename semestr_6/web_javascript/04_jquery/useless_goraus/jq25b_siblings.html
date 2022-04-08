@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style>
+.siblings * { 
+    display: block;
+    border: 2px solid red;
+    color: red;
+    padding: 5px;
+    margin: 15px;
+}
+</style>
+<script src="./jq25b_siblings_files/jquery.min.js.pobrane"></script>
+<script>
+$(document).ready(function(){
+    $("h2").siblings().css({"color": "green", "border": "2px solid green"});
+});
+</script>
+</head>
+<body class="siblings">
+
+<div>div (parent)
+  <p style="color: green; border: 2px solid green;">p</p>
+  <span style="color: green; border: 2px solid green;">span</span>
+  <h2>h2</h2>
+  <h3 style="color: green; border: 2px solid green;">h3</h3>
+  <p style="color: green; border: 2px solid green;">p</p>
+</div>
+
+
+
+
+</body></html>

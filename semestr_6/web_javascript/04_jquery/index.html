@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>JQuery</title>
+  <link rel="stylesheet" href="style_form.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $("#add").click(function(){
+      var html = '';
+      html += '<input type="number" step="any" id="jbc"><br>'
+      $("#ile_liczb").append(html);
+    })});
+</script>
+
+<!--
+  let x = 0;
+
+  function nowe_formularze(form){
+    
+    ile = document.getElementById('ilosc').value;
+    console.log('ile: ' + ile);
+     
+    for(let i=0; i<ile; i++){
+      console.log(i);
+      dodaj();
+    }
+  }
+
+  function dodaj(){
+    $('ile_liczb').append(
+      '<input type="number" step="any" id="'+x+'"/>' + '<br>');
+  }
+-->
+
+</script>
+
+</head>
+
+<body>
+
+<form>
+  <p>
+    <label for="ilosc">Ile liczb chcesz wprowadzić?:</label><br>
+    <input type="number" step="any" id="ilosc"><br>
+    <button id="add" type="button");">OK</button>
+  </p>
+</form>
+
+<form>
+  <div id="ile_liczb">
+  </div>
+</form>
+
+</body>
+</html>

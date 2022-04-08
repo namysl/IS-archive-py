@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+<script src="./jq2_files/jquery.min.js.pobrane"></script>
+<script>
+var i=0;
+$(document).ready(function(){
+    $("button").click(function(){
+        if ((i++%2)==0)
+        $("h2").css("color","green");
+        else
+        $("h2").css("color","blue");
+    });
+});
+</script>
+<style>
+body {background-color: yellow;}
+h2   {color: brown;}
+p    {color: red;}
+</style>
+</head>
+<body>
+
+
+
+<h2>Nagłówek</h2>
+
+<p>Tekst1</p>
+<p>Tekst2</p>
+
+<button>Guzik do zmiany koloru</button>
+
+
+
+</body></html>

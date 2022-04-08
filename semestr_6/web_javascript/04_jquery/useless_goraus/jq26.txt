@@ -1,0 +1,2 @@
+ <h2>Wczytana zawartość nagłówka</h2>
+<p id="p1">oraz paragrafu</p>

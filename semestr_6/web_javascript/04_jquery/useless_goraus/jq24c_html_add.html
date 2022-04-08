@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+<script src="./jq24c_html_add_files/jquery.min.js.pobrane"></script>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+$("h2").remove();
+// ^ remove
+       $("p").each(function(){
+$("#t5").append($(this).attr("id")+" ");
+// ^ add
+
+})
+ });
+});
+</script>
+<style>
+body {background-color: yellow;}
+h2   {color: brown;}
+p    {color: red;}
+</style>
+</head>
+<body>
+
+
+
+<h2>Nagłówek</h2>
+
+<div style="height:300px;width:300px;position:relative;">
+<p id="t1">Tekst1</p>
+<p id="t2">Tekst2</p>
+<p id="t3">Tekst3</p>
+<p id="t4">Tekst4</p>
+<p id="t5"></p>
+</div>
+
+
+
+<button>Guzik </button>
+
+
+
+</body></html>

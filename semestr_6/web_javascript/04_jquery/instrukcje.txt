@@ -1,0 +1,6 @@
+1) średnia z liczb:
+	pierwsze pole do podania ile ma być liczb
+	później tworzy formularze do wpisania liczb
+	na końcu liczy średnią z podanych
+
+2) ściąganie JSONowych danych na stronę
