@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="UTF-8">
+	<title>JQuery</title>
+	<link rel="stylesheet" href="style_form.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		$("#nowy_form").click(function(){
+			document.getElementById('ile_liczb').innerHTML = "";
+			document.getElementById('wynik').innerHTML = "";
+			
+			let html = '';
+			ile = document.getElementById('ilosc').value;
+
+			html += 'Wprowadź liczby:<br>';		  
+			for (let i=0; i<ile; i++){
+				let id_gen = 'id_' + i;  //numerowane id dla kazdego pola
+
+				html += '<input type="number" step="any" id=';
+				html += id_gen; 
+				html += '><br>'
+			}
+			html += '<button id="calc" type="button" onclick=calculate(this);>OBLICZ</button><br>'
+			$("#ile_liczb").append(html);
+			console.log("ile liczb: " + ile);
+		})
+	});
+	
+	function calculate(form){
+		ile = document.getElementById('ilosc').value;
+		let suma = 0;
+		
+		for (let i=0; i<ile; i++){
+			let id_gen = 'id_' + i;
+			form = document.getElementById(id_gen).value;
+			console.log('Value: ' + form);
+			suma += Number(form);
+		}
+		
+		let wynik;
+		wynik = suma/ile;
+		console.log(suma + ' / ' + ile + ' = ' + wynik);
+		
+		let html = '';
+		html += 'Średnia z podanych liczb wynosi:<br>';
+		html += wynik;
+		$("#wynik").append(html);
+	}
+	
+	</script>
+</head>
+
+<body>
+	<h2>Obliczanie średniej</h2>
+	<form>
+		<p>
+			<label for="ilosc">Ile liczb chcesz wprowadzić?:</label><br>
+			<input type="number" step="any" id="ilosc"><br>
+			<button id="nowy_form" type="button">OK</button><br>
+		</p>
+	</form>
+
+	<form>
+		<div id="ile_liczb"></div>
+	</form>
+	
+	<div id="wynik"></wynik>
+</body>
+</html>
