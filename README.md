@@ -7,7 +7,7 @@
 │   ├── hashtables  
 │   ├── kolosy_egzaminy  
 │   ├── komunikator  
-│   ├── mniejsi 
+│   ├── mniejsi  
 │   ├── podstawy_sztucznych_inteligencji  
 │   ├── robotyka  
 │   └── sortowanie_wyszukiwanie   
