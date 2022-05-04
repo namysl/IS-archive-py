@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="UTF-8">
+	<title>komunikator</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<style>
+		body{
+			background-image: linear-gradient(white, rgb(0, 151, 163));
+			background-attachment: fixed;
+			font-family: courier;
+		}
+
+		button{
+			background-color: rgb(0, 151, 163);
+			border: none;
+			color: white;
+			padding: 13px 32px;
+			text-decoration: none;
+			margin: 10px;
+			cursor: pointer;
+			box-shadow: 0px 0px 2em white;
+		}
+
+		input{
+			border: 3px dashed pink;
+			margin: auto;
+			padding: 10px;
+			height: 100%;
+			width: 50%;
+			margin: 8px 0;
+			box-sizing: border-box;
+		}	
+			
+		textarea{
+			overflow: scroll;
+			overflow-x: hidden;
+			width: 50%;
+			height: 300px;
+			display: block; 
+			margin-left: 25%; 
+			padding: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	
+	<div style="text-align:center;">
+		<br>
+		<textarea readonly id="stare_wiadomosci"></textarea>
+		<input type="text" id="nowa_wiadomosc" placeholder="Wpisz wiadomość"/><br>
+		<button id="wyslij_wiadomosc">OK</button>
+	</div>
+
+	<script>
+		if ("WebSocket" in window){
+			const button = document.querySelector('#wyslij_wiadomosc');
+			const stare_wiadomosci = document.querySelector('#stare_wiadomosci');
+			const nowa_wiadomosc = document.querySelector('#nowa_wiadomosc');
+
+			let ws = new WebSocket("ws://localhost:8089");
+			
+			function wyswietl_wiadomosci(wiadomosc){
+				stare_wiadomosci.textContent += `\n${wiadomosc}`;
+				stare_wiadomosci.scrollTop = stare_wiadomosci.scrollHeight;
+			}
+
+			ws.onopen = function(){
+				console.log("Połączono z serwerem"); 
+			};
+
+			button.onclick = function(){
+				if(nowa_wiadomosc.value){
+					if (ws){
+						ws.send(nowa_wiadomosc.value);
+						wyswietl_wiadomosci(`ja: ${nowa_wiadomosc.value}`);
+						nowa_wiadomosc.value = '';
+					} 
+					else{
+						alert("Utracono połączenie z serwerem");
+					}
+				}
+				else{
+					alert("Nie można wysłać pustej wiadomości");
+				}
+			}
+
+			ws.onmessage = function ({data}){ 
+				wyswietl_wiadomosci(`user: ${data}`);
+			};
+
+			ws.onclose = function(){ 
+				ws = null;
+				alert("Utracono połączenie z serwerem"); 
+			};
+		}
+		else {
+			alert("Błąd");
+		}
+	</script>
+	
+</body>
+</html>
