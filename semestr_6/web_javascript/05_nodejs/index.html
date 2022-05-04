@@ -38,6 +38,12 @@
 		}
 	</style>
 </head>
+<script>
+	//odswiezanie strony nie dopisuje danych z poprzedniej sesji 
+    if (window.history.replaceState) {
+        window.history.replaceState(null, null, window.location.href);
+    }
+</script>
 
 <body>
 	<h1>Forum</h1>
