@@ -1,5 +1,17 @@
+const express = require('express')
+
 const WebSocket = require("ws");
 const ws_server = new WebSocket.Server({port: 8089});
+
+const app = express();
+const PORT = 8090;  // http://127.0.0.1:8090
+
+app.listen(PORT, () => console.log(`Serwer na porcie ${PORT}`));
+
+const path = require('path');
+app.use(express.static(path.join(__dirname, 'public')));
+
+
 
 ws_server.on("connection", ws => {
     ws.id = ws_server.getUniqueID();
