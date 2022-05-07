@@ -62,7 +62,7 @@
 			const stare_wiadomosci = document.querySelector('#stare_wiadomosci');
 			const nowa_wiadomosc = document.querySelector('#nowa_wiadomosc');
 
-			let ws = new WebSocket("ws://localhost:8089");
+			let ws = new WebSocket("ws://localhost:8089");  //zmienić na 192.168.14.34
 			
 			function wyswietl_wiadomosci(wiadomosc){
 				stare_wiadomosci.textContent += `\n${wiadomosc}`;
@@ -77,7 +77,7 @@
 				if(nowa_wiadomosc.value){
 					if (ws){
 						ws.send(nowa_wiadomosc.value);
-						wyswietl_wiadomosci(`ja: ${nowa_wiadomosc.value}`);
+						wyswietl_wiadomosci(`JA: ${nowa_wiadomosc.value}`);
 						nowa_wiadomosc.value = '';
 					} 
 					else{
@@ -90,7 +90,12 @@
 			}
 
 			ws.onmessage = function ({data}){ 
-				wyswietl_wiadomosci(`user: ${data}`);
+				if (data.includes("ROZŁĄCZONO") || data.includes("POŁĄCZONO")){
+					wyswietl_wiadomosci(data);
+				}
+				else{
+					wyswietl_wiadomosci(`USER ${data}`);
+				}
 			};
 
 			ws.onclose = function(){ 

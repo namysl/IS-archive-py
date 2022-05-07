@@ -19,7 +19,7 @@ ws_server.on("connection", ws => {
 	
 	ws_server.clients.forEach(function each(client) {
 		if (client !== ws && client.readyState === WebSocket.OPEN) {
-			client.send(`POŁĄCZONO id usera: ${ws.id}`);
+			client.send(`POŁĄCZONO NOWEGO USERA O ID ${ws.id}`);
 		}
 	});
 
@@ -28,7 +28,7 @@ ws_server.on("connection", ws => {
         
 		ws_server.clients.forEach(function each(client) {
             if (client !== ws && client.readyState === WebSocket.OPEN) {
-                client.send(`${data}`);
+                client.send(`${ws.id}: ${data}`);
             }
         });
     };
@@ -38,7 +38,7 @@ ws_server.on("connection", ws => {
 
 		ws_server.clients.forEach(function each(client) {
             if (client !== ws && client.readyState === WebSocket.OPEN) {
-                client.send(`ROZŁĄCZONO id usera: ${ws.id}`);
+                client.send(`ROZŁĄCZONO USERA O ID ${ws.id}`);
             }
         });
     };
