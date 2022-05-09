@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj nowy rekord</title>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<style>
+		body{
+			background-image: linear-gradient(white, rgb(0, 151, 163));
+			background-attachment: fixed;
+			font-family: courier;
+			text-align: center;
+		}
+
+		input[type=submit], button{
+			background-color: rgb(0, 151, 163);
+			border: none;
+			color: white;
+			padding: 13px 32px;
+			text-decoration: none;
+			margin: 10px;
+			cursor: pointer;
+			box-shadow: 0px 0px 2em white;
+		}
+
+		input{
+			border: 3px dashed pink;
+			margin: auto;
+			padding: 10px;
+			height: 100%;
+			width: 50%;
+			margin: 8px 0;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+
+<body>
+    <h1>Dodaj nowy rekord:</h1>
+	
+    <form action="/addnewrecord.html" method="get">
+        <br>
+		
+        <label>1:</label><br>
+        <input id="new1" name="new1" value=""><br>
+        <label>2:</label><br>
+        <input id="new2" name="new2" value="" ><br>
+        <label>3:</label><br>
+        <input id="new3" name="new3" value="" >
+		
+		<br><br>
+		
+        <input type="submit" value="Dodaj">
+    </form>
+	<br><br>
+
+    <button onclick="location.href='index.html'" type="button">Wyświetl bazę</button>
+</body>
+</html>
