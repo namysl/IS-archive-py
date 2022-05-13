@@ -1,6 +1,6 @@
 const server_port = 8888;
 console.log("Port: " + server_port);
-	
+
 const http = require('http');
 const fs = require('fs');
 const url = require('url');
@@ -15,9 +15,9 @@ let poprzedni = "";
 http.createServer((req, res) => {
     const url_req = url.parse(req.url, true);
     const user_query = url_req.query;
-	
+
 	//req.url -> to co jest po 8888/
-	//user_query -> to co jest po ? w url			
+	//user_query -> to co jest po ? w url
 
 	let nowy;
 	if(url_req.search){
@@ -27,7 +27,7 @@ http.createServer((req, res) => {
 	else{
 		nowy = "";
 	}
-	
+
     if (nowy.startsWith('n') || poprzedni != "") {
 		console.log("DODAJE NOWY REKORD!!! nowy: ", nowy);
         nowy = poprzedni;
@@ -36,9 +36,9 @@ http.createServer((req, res) => {
 
 	//console.log("url: " + req.url + " nowy: " + nowy + " poprzedni: " + poprzedni);
 	console.log(user_query);
-	
+
     load_from_DB();
-	
+
 	if(url_req.path === "/index.html" || url_req.path === "/"){
 		nowy = "";
 		poprzedni = "";
@@ -76,20 +76,20 @@ http.createServer((req, res) => {
             if (err) throw err;
 
             const mojaDB = db.db("mojabaza");
-			
+
 			let i = 1;
 			str = "";
             mojaDB.collection("input").find({}).toArray((err, found) => {
-                if (err) throw err; 
+                if (err) throw err;
 
                 found.forEach(item => {
-                    str += "rekord nr "+i+", id: "+ item._id + "<div><h4>"+item.new1+"<br>" +item.new2+"<br>"+item.new3+"</h4><br>";
-                    str += "<a href='index.html?" + item._id + "'>Usuń rekord</a>";
+                    str += "komentarz nr "+ i +"<div><h4>Autor:</h4>"+item.new1+"<br><h4>Tytuł:</h4>" +item.new2+"<br><h4>Komentarz:</h4>"+item.new3+"<br><br><br>";
+                    str += "<a href='index.html?" + item._id + "'>Usuń</a>";
                     str += "<br><br><br>---</div>";
 					i++;
                 });
 			db.close();
-            });            
+            });
         });
     }
 
@@ -98,14 +98,14 @@ http.createServer((req, res) => {
             if (err) throw err;
 
             const mojaDB = db.db("mojabaza");
-			
+
             mojaDB.collection("input").insertOne(new_record, (err, res) => {
                 if (err) throw err;
                 db.close();
             });
         });
     }
-	
+
     function delete_from_DB(id_record) {
         MongoDBClient.connect(db_port, (err, db) => {
             if (err) throw err;
