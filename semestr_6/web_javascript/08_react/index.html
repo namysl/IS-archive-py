@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>React</title>
+	<script src="https://unpkg.com/react@18.1.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18.1.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+		body{
+			background-image: linear-gradient(white, rgb(0, 151, 163));
+			background-attachment: fixed;
+			font-family: courier;
+			text-align: center;
+		}
+
+		button, a{
+			background-color: rgb(0, 151, 163);
+			border: none;
+			color: white;
+			padding: 13px 32px;
+			text-decoration: none;
+			margin: 10px;
+			cursor: pointer;
+			box-shadow: 0px 0px 2em white;
+		}
+
+		input{
+			border: 3px dashed pink;
+			margin: auto;
+			padding: 10px;
+			height: 100%;
+			width: 50%;
+			margin: 8px 0;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+    <div class="bar">
+        <h1>Forum</h1>
+    </div>
+    <div class="contain" id="contains"></div>
+</body>
+<script type="text/babel">
+    function PostResponse(props) {
+        return (
+            <div className="response">{props.user}: {props.body}</div>
+        );
+    }
+
+    function App() {
+        let [posts, setPosts] = React.useState([]);
+
+        const featchPosts = async function() {
+            fetch("/getposts")
+            .then(res => res.json())
+            .then(data => {
+                setPosts(data)
+            })
+        }
+
+        React.useEffect(() => {
+            featchPosts();
+        }, [])
+
+        React.useEffect(() => {
+            console.log(posts);
+        }, [posts])
+
+        return (
+            <div className="app">
+                <PostForm />
+                {posts.map((post, index) => {
+                    return <Post {...post} key={index} />
+                })}
+            </div>
+        );
+    }
+
+    function PostForm() {
+        let [name, setName] = React.useState("");
+        let [title, setTitle] = React.useState("");
+        let [message, setMessage] = React.useState("");
+
+        function handleName (event) {
+            setName(event.target.value);
+        }
+
+        function handleTitle (event) {
+            setTitle(event.target.value);
+        }
+
+        function handleMessage (event) {
+            setMessage(event.target.value);
+        }
+
+        function sendMessage() {
+            fetch("/newpost", {
+                method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({user: name, title: title, body: message})
+            }).then(() => {
+                window.location.reload()
+            });
+        }
+
+        return (
+            <div className="add_new">
+                <div className="new">
+                    <input placeholder="username" className="user" onChange={handleName} /><br/>
+                    <input placeholder="title" className="tytul" onChange={handleTitle} /><br/>
+                    <input placeholder="message" className="message" onChange={handleMessage} /><br/>
+                    <button className="button_add" onClick={sendMessage}>OK</button>
+                </div>
+            </div>
+        );
+    }
+
+    function Post(props) {
+        return (
+            <div className="box">
+				<div className="author"><b>Autor:</b> {props.user}</div><br/>
+                <div className="title"><b>Tytuł posta:</b> {props.title}</div><br/>
+                <div className="body">{props.body}</div><br/>
+				<hr/>
+            </div>
+        );
+    }
+
+    const container = document.getElementById("contains");
+    const root = ReactDOM.createRoot(container);
+    root.render(<App />);
+</script>
+</html>
