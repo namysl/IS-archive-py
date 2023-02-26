@@ -1,0 +1,11 @@
+\chapter{Podsumowanie}
+
+Celem pracy było stworzenie dwóch klastrów, z jednym oraz trzema węzłami, a następnie oszacowanie ich wydajności. Do stworzenia maszyn wirtualnych, które miały być hostami w klastrach, użyto narzędzi takich jak oprogramowanie Vagrant, biblioteka \textit{libvirt} oraz natywne dla Linuxa środowisko wirtualizacyjne KVM/QEMU. \\
+
+Do budowy klastra jednowęzłowego wykorzystano Minikube, natomiast w przypadku klastra z wieloma węzłami zastosowano MicroK8s. Dzięki automatyzacji procesu tworzenia maszyn wirtualnych oraz samego klastra za pomocą skryptów powłoki systemowej Bash i narzedzia Helm, wdrażanie infrastruktury nie wymagało nadmiernego nakładu pracy ze strony administratora. Dodatkowo, w klastrze zaimplementowane zostały narzędzia Prometheus oraz Grafana, które służyły do monitoringu stanu maszyn i klastra. \\
+
+W testowaniu wydajności wykorzystano dwa rodzaje testów. Test obciążeniowy przeprowadzony został za pomocą narzędzia K6, z kolei w teście przeciążającym wykorzystano Kube-Stresscheck. Analiza wyników oparta była o wykresy wygenerowane przez narzędzia monitoringu oraz dane pozyskane z klastra.\\
+
+Przeprowadzone testy pozwoliły określić możliwe wąskie gardła (ang. \textit{bottlenecks}). Jeśli chodzi o klaster z jednym węzłem, problemem był brak rozgraniczenia między podami obsługującymi procesy Kubernetesa a podami aplikacji, co w przypadku dużego obciążenia systemu wiązało się z ograniczeniem dostępności nie tylko serwisów, ale też samego systemu operacyjnego maszyny, na której działał klaster. Podobna sytuacja nie miała miejsca w klastrze z dwoma workerami oraz jednym masterem. Na testowanej maszynie część aplikacji była niedostępna do momentu uruchomienia podów na drugim workerze.\\
+
+Ostatecznie wykazano, że klaster złożony z trzech węzłów jest, w przeciwieństwie do jednowęzłowego, o wiele bardziej odporny na przeciążenia oraz \textit{downtime}. Jednakże w specyficznych przypadkach, gdy wymagana jest wysoka dostępność klastra, należy rozważyć wdrożenie większej ilości zarówno maszyn roboczych, jak i maszyn warstwy sterowania.

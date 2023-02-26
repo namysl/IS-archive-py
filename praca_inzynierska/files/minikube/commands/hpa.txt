@@ -1,0 +1,1 @@
+kubectl autoscale deployment nginx-kube --min=3 --max=10 --cpu-percent=60
