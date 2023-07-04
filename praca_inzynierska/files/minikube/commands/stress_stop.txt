@@ -1,1 +1,0 @@
-kubectl delete -f https://raw.githubusercontent.com/giantswarm/kube-stresscheck/master/examples/node.yaml

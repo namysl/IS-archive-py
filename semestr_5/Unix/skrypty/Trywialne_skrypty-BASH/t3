@@ -1,9 +1,0 @@
-#!/bin/bash
-#
-# Wypisywanie argumentow wywolania linia po linii
-#
-for I 
-do
-echo $I
-done
-

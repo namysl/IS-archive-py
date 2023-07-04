@@ -1,5 +1,0 @@
-#!/bin/bash
-echo "Podaj tekst do wypisania: "
-read LINE
-echo $LINE
-
